@@ -16,7 +16,7 @@ export function Hero() {
       </div>
 
       {/* CENTER — Doctor fills full hero height */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 bottom-[-48px] z-0 hidden items-end justify-center md:flex">
+      <div className="pointer-events-none absolute inset-x-0 top-0 bottom-[-58px] z-0 hidden items-end justify-center md:flex">
         <img
           src={doctorImg}
           alt="Amretri Healthcare medical operations expert"
