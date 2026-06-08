@@ -31,7 +31,7 @@ export function Hero() {
         <img src={doctorImg} alt="" className="w-[80%] max-w-md drop-shadow-2xl" />
       </div>
 
-      <div className="relative z-10 mx-auto grid min-h-screen max-w-[1500px] items-center gap-6 px-8 pb-16 pt-28 md:grid-cols-12 md:pb-20 md:pt-32">
+      <div className="relative z-10 mx-auto grid md:min-h-screen max-w-[1500px] items-center gap-6 px-8 pb-16 pt-6 md:grid-cols-12 md:pb-20 md:pt-32">
         {/* LEFT — Headline */}
         <div className="md:col-span-4 md:pr-4">
           <h1 className="text-3xl font-extrabold leading-[1.1] tracking-tight md:text-[1.85rem] lg:text-[2.15rem] xl:text-[2.35rem] animate-fade-up [text-shadow:0_2px_12px_rgba(0,0,0,0.15)]">
