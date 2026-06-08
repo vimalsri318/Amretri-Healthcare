@@ -34,8 +34,8 @@ export function CtaFooter() {
       <footer className="bg-brand-soft text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-12">
           <div className="md:col-span-4">
-            <div className="inline-flex items-center gap-2 rounded-xl bg-white px-3 py-2">
-              <img src={logoAsset} alt="Amretri Healthcare" className="h-8 w-auto" />
+            <div className="inline-flex items-center gap-2 rounded-xl bg-white p-2">
+              <img src={logoAsset} alt="Amretri Healthcare" className="h-16 w-auto md:h-18" />
             </div>
             <p className="mt-5 max-w-sm text-sm text-white/90">
               Amretri Healthcare Pvt. Ltd. is committed to delivering quality healthcare solutions with trust, innovation, and excellence.
