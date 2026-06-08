@@ -63,7 +63,7 @@ export function CtaFooter() {
                   href={href}
                   aria-label={label}
                   {...props}
-                  className="grid h-10 w-10 place-items-center rounded-full bg-accent text-white transition hover:opacity-90"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-accent text-brand-deep transition hover:opacity-95 hover:scale-110 shadow-sm"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
