@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Send, Stethoscope, Sparkles } from "lucide-react";
+import whatsappLogo from "@/assets/whatsapp-logo.png";
 
 type Msg = { role: "bot" | "user"; text: string; options?: string[] };
 
@@ -122,15 +123,11 @@ export function ChatBot() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contact us on WhatsApp"
-          className="group relative grid h-14 w-14 place-items-center rounded-full text-white shadow-2xl transition-transform duration-300 hover:scale-110"
+          className="group relative grid h-14 w-14 place-items-center rounded-full shadow-2xl transition-transform duration-300 hover:scale-110"
         >
           <span className="absolute inset-0 animate-ping rounded-full bg-emerald-500/30" aria-hidden />
           <span className="absolute -inset-1 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 opacity-90 blur-sm" aria-hidden />
-          <span className="relative grid h-14 w-14 place-items-center rounded-full bg-emerald-500 ring-2 ring-white/60">
-            <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.114-2.904-6.99C16.246 3.75 13.775 2.717 11.14 2.717 5.708 2.717 1.284 7.14 1.28 12.582c-.001 1.776.467 3.51 1.358 5.053l-.832 3.036 3.123-.817zm11.911-7.228c-.302-.15-1.785-.882-2.062-.982-.277-.1-.478-.15-.679.15-.2.3-.777.982-.953 1.185-.175.2-.351.224-.653.075-.302-.15-1.274-.469-2.427-1.496-.897-.8-1.502-1.787-1.678-2.088-.176-.3-.019-.462.132-.612.135-.135.302-.35.453-.525.15-.175.2-.3.302-.5.101-.2.05-.375-.025-.526-.075-.15-.679-1.635-.93-2.24-.244-.589-.493-.51-.679-.519-.176-.009-.377-.01-.578-.01-.201 0-.528.075-.804.375-.276.3-1.055 1.031-1.055 2.516s1.08 2.982 1.23 3.182c.15.2 2.126 3.246 5.15 4.553.719.311 1.28.498 1.718.638.723.23 1.381.198 1.902.12.58-.087 1.785-.73 2.036-1.433.252-.702.252-1.303.176-1.43-.076-.127-.277-.202-.578-.352z"/>
-            </svg>
-          </span>
+          <img src={whatsappLogo} alt="WhatsApp" className="relative h-14 w-14 object-contain" />
         </a>
 
         {/* Chatbot Button */}
