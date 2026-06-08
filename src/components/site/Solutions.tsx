@@ -7,6 +7,7 @@ const solutions = [
     title: "Pharmacy Management",
     tagline: "We fix broken pharmacy systems and unlock hidden profits.",
     margin: "5–30%",
+    link: "/hospital-pharmacy-acquisition-management-services",
     points: [
       "AI-powered inventory & expiry control",
       "Leak-proof billing & theft prevention",
@@ -59,6 +60,7 @@ export function Solutions() {
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {solutions.map((s, i) => {
             const Icon = s.icon;
+            const href = "link" in s ? s.link : "/#contact";
             return (
               <Reveal
                 key={s.title}
@@ -88,7 +90,7 @@ export function Solutions() {
                 </ul>
 
                 <a
-                  href="/#contact"
+                  href={href}
                   className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition group-hover:gap-3"
                 >
                   Know More <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
