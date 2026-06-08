@@ -66,7 +66,7 @@ export function Solutions() {
                 key={s.title}
                 as="article"
                 delay={i * 120}
-                variant="up"
+                variant={i === 0 ? "left" : i === 1 ? "scale" : "right"}
                 className="group relative flex flex-col rounded-3xl border border-border bg-card p-8 hover-lift hover:border-brand"
               >
                 <div className="flex items-center justify-between">

@@ -337,7 +337,12 @@ function PharmacyServicesPage() {
           {/* Problems Bento Grid */}
           <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {problemsAndSolutions.map((item, idx) => (
-              <Reveal key={idx} variant="up" className="flex flex-col justify-between rounded-3xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition">
+              <Reveal
+                key={idx}
+                delay={(idx % 3) * 80}
+                variant={idx % 3 === 0 ? "left" : idx % 3 === 1 ? "scale" : "right"}
+                className="flex flex-col justify-between rounded-3xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition"
+              >
                 <div>
                   <div className="flex items-center gap-3">
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-rose-50 text-rose-500">
@@ -394,14 +399,21 @@ function PharmacyServicesPage() {
 
             {/* Right Services Grid */}
             <div className="lg:col-span-7">
-              <Reveal variant="right" className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-2">
                 {services.map((s, idx) => (
-                  <div key={idx} className="rounded-2xl border border-border bg-secondary/20 p-5 hover:bg-secondary/40 transition">
-                    <h3 className="text-sm font-bold text-ink">{s.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-ink-soft">{s.desc}</p>
-                  </div>
+                  <Reveal
+                    key={idx}
+                    delay={(idx % 2) * 80}
+                    variant={idx % 2 === 0 ? "left" : "right"}
+                    className="rounded-2xl border border-border bg-secondary/20 p-5 hover:bg-secondary/40 transition flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="text-sm font-bold text-ink">{s.title}</h3>
+                      <p className="mt-2 text-xs leading-relaxed text-ink-soft">{s.desc}</p>
+                    </div>
+                  </Reveal>
                 ))}
-              </Reveal>
+              </div>
             </div>
 
           </div>
@@ -422,7 +434,12 @@ function PharmacyServicesPage() {
           {/* Timeline steps */}
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {steps.map((st, idx) => (
-              <Reveal key={idx} variant="up" className="relative flex flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+              <Reveal
+                key={idx}
+                delay={(idx % 4) * 80}
+                variant={idx % 2 === 0 ? "left" : "right"}
+                className="relative flex flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition"
+              >
                 <div>
                   <span className="inline-block rounded-lg bg-brand px-2.5 py-1 text-xs font-bold tracking-wider text-white uppercase">
                     Phase 0{idx + 1}
@@ -654,17 +671,24 @@ function PharmacyServicesPage() {
               { label: "Hospital Pharmacy Compliance & Audit Services", href: "#proposal-form" },
               { label: "Hospital Pharmacy Consulting & Profit Improvement Services", href: "#proposal-form" }
             ].map((link, idx) => (
-              <a
+              <Reveal
                 key={idx}
-                href={link.href}
-                className="flex flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:shadow-md hover:border-brand/35 hover:scale-[1.02]"
+                delay={(idx % 5) * 80}
+                variant={idx % 3 === 0 ? "left" : idx % 3 === 1 ? "scale" : "right"}
+                className="flex"
               >
-                <span className="text-ink leading-snug">{link.label}</span>
-                <span className="mt-4 inline-flex items-center justify-center gap-1 text-[11px] text-brand font-bold uppercase tracking-wider">
-                  Learn More
-                  <ArrowUpRight className="h-3 w-3" />
-                </span>
-              </a>
+                <a
+                  key={idx}
+                  href={link.href}
+                  className="flex w-full flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:shadow-md hover:border-brand/35 hover:scale-[1.02]"
+                >
+                  <span className="text-ink leading-snug">{link.label}</span>
+                  <span className="mt-4 inline-flex items-center justify-center gap-1 text-[11px] text-brand font-bold uppercase tracking-wider">
+                    Learn More
+                    <ArrowUpRight className="h-3 w-3" />
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </div>

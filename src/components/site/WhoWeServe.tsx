@@ -40,7 +40,8 @@ export function WhoWeServe() {
             <Reveal
               key={p.title}
               as="article"
-              delay={(i % 3) * 100}
+              delay={(i % 3) * 80}
+              variant={i % 3 === 0 ? "left" : i % 3 === 1 ? "up" : "right"}
               className="group overflow-hidden rounded-3xl border border-border bg-card hover-lift hover:border-brand/40"
             >
               <div className="aspect-[4/3] overflow-hidden">

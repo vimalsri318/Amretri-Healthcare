@@ -30,25 +30,28 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px 80px 0px" }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
-  const base = "transition-all duration-700 ease-out will-change-transform";
+  const base = "transition-all duration-[1000ms] will-change-transform";
   const hidden = {
-    up: "opacity-0 translate-y-8",
-    left: "opacity-0 -translate-x-8",
-    right: "opacity-0 translate-x-8",
-    scale: "opacity-0 scale-95",
+    up: "opacity-0 translate-y-16",
+    left: "opacity-0 -translate-x-24",
+    right: "opacity-0 translate-x-24",
+    scale: "opacity-0 scale-90",
   }[variant];
   const visible = "opacity-100 translate-x-0 translate-y-0 scale-100";
 
   return (
     <Tag
       ref={ref as never}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{
+        transitionDelay: `${delay}ms`,
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+      }}
       className={`${base} ${shown ? visible : hidden} ${className}`}
     >
       {children}

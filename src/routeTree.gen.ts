@@ -9,8 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as HospitalPharmacyAcquisitionManagementServicesRouteImport } from './routes/hospital-pharmacy-acquisition-management-services'
 import { Route as IndexRouteImport } from './routes/index'
 
+const HospitalPharmacyAcquisitionManagementServicesRoute =
+  HospitalPharmacyAcquisitionManagementServicesRouteImport.update({
+    id: '/hospital-pharmacy-acquisition-management-services',
+    path: '/hospital-pharmacy-acquisition-management-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +26,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/hospital-pharmacy-acquisition-management-services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/hospital-pharmacy-acquisition-management-services'
+  id: '__root__' | '/' | '/hospital-pharmacy-acquisition-management-services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HospitalPharmacyAcquisitionManagementServicesRoute: typeof HospitalPharmacyAcquisitionManagementServicesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/hospital-pharmacy-acquisition-management-services': {
+      id: '/hospital-pharmacy-acquisition-management-services'
+      path: '/hospital-pharmacy-acquisition-management-services'
+      fullPath: '/hospital-pharmacy-acquisition-management-services'
+      preLoaderRoute: typeof HospitalPharmacyAcquisitionManagementServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +71,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HospitalPharmacyAcquisitionManagementServicesRoute:
+    HospitalPharmacyAcquisitionManagementServicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

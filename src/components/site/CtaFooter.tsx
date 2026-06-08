@@ -1,5 +1,6 @@
 import { Mail, Phone, ArrowUpRight, Facebook, Linkedin, Instagram, Twitter } from "lucide-react";
 import logoAsset from "@/assets/amretri-logo.png";
+import { Reveal } from "./Reveal";
 
 export function CtaFooter() {
   return (
@@ -11,7 +12,7 @@ export function CtaFooter() {
           <div className="absolute right-16 top-4 h-4 w-4 bg-white/70" />
           <div className="absolute right-6 top-20 h-6 w-6 bg-white/80" />
         </div>
-        <div className="relative mx-auto max-w-5xl px-6 text-center">
+        <Reveal variant="scale" className="relative mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">
             Your trusted healthcare operations partner.
           </h2>
@@ -28,7 +29,7 @@ export function CtaFooter() {
               <ArrowUpRight className="h-4 w-4" />
             </span>
           </a>
-        </div>
+        </Reveal>
       </section>
 
       <footer className="bg-brand-soft text-white">

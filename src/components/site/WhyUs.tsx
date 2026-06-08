@@ -59,8 +59,8 @@ export function WhyUs() {
               return (
                 <Reveal
                   key={it.title}
-                  delay={i * 100}
-                  variant="up"
+                  delay={(i % 2) * 80}
+                  variant={i % 2 === 0 ? "left" : "right"}
                   className="group rounded-2xl border border-border bg-card p-6 hover-lift hover:border-brand/40"
                 >
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand/10 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
@@ -87,7 +87,12 @@ export function WhyUs() {
 
           <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/15 md:grid-cols-3">
             {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 80} variant="up" className="bg-brand p-6 transition hover:bg-brand-deep">
+              <Reveal
+                key={s.label}
+                delay={(i % 3) * 80}
+                variant={i % 3 === 0 ? "left" : i % 3 === 1 ? "scale" : "right"}
+                className="bg-brand p-6 transition hover:bg-brand-deep"
+              >
                 <div className="text-4xl font-extrabold md:text-5xl transition-transform duration-300 hover:scale-105 origin-left">{s.value}</div>
                 <div className="mt-2 text-sm font-semibold">{s.label}</div>
                 <div className="mt-1 text-xs text-white/70">{s.sub}</div>
