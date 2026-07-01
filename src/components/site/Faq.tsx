@@ -19,7 +19,7 @@ export function Faq() {
     <section id="faq" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6">
         <Reveal className="text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">FAQs</p>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">FAQs</p>
           <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">Frequently Asked Questions</h2>
         </Reveal>
 
@@ -33,8 +33,8 @@ export function Faq() {
                 className="group block w-full px-6 py-5 text-left transition hover:bg-secondary/60"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <span className="text-base font-semibold text-ink transition-colors group-hover:text-brand md:text-lg">{f.q}</span>
-                  <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-300 ${isOpen ? "bg-brand text-white rotate-180" : "bg-secondary text-brand group-hover:bg-brand group-hover:text-white"}`}>
+                  <span className="text-base font-semibold text-ink transition-colors group-hover:text-orange md:text-lg">{f.q}</span>
+                  <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-300 ${isOpen ? "bg-brand text-white rotate-180" : "bg-secondary text-brand group-hover:bg-orange/10 group-hover:text-orange"}`}>
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </div>

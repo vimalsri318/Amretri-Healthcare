@@ -49,7 +49,7 @@ export function Solutions() {
     <section id="solutions" className="relative bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">What We Provide</p>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">What We Provide</p>
           <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">Our Solutions</h2>
           <p className="mt-4 text-base text-ink-soft">
             We don't run departments. We rebuild them into high-performance,
@@ -70,10 +70,10 @@ export function Solutions() {
                 className="group relative flex flex-col rounded-3xl border border-border bg-card p-8 hover-lift hover:border-brand"
               >
                 <div className="flex items-center justify-between">
-                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-orange">
                     <Icon className="h-7 w-7" />
                   </div>
-                  <span className="rounded-full bg-accent px-3 py-1 text-xs font-bold text-brand-deep">
+                  <span className="rounded-full bg-orange/10 px-3 py-1 text-xs font-bold text-orange">
                     {s.margin}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export function Solutions() {
 
                 <a
                   href={href}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition group-hover:gap-3"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-all duration-300 group-hover:text-orange group-hover:gap-3"
                 >
                   Know More <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </a>

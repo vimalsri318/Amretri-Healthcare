@@ -47,13 +47,13 @@ export function Leadership() {
               variant={i % 2 === 0 ? "left" : "right"}
               className="group rounded-3xl bg-card p-8 text-center shadow-sm hover-lift"
             >
-              <div className="mx-auto grid h-36 w-36 place-items-center rounded-full border-4 border-brand bg-secondary transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
+              <div className="mx-auto grid h-36 w-36 place-items-center rounded-full border-4 border-brand bg-accent transition-all duration-500 group-hover:scale-105 group-hover:rotate-3 group-hover:border-orange">
                 <span className="text-3xl font-extrabold text-brand">
                   {m.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
                 </span>
               </div>
               <h3 className="mt-6 text-xl font-extrabold text-ink">{m.name}</h3>
-              <p className="mt-2 text-base font-bold text-brand">{m.role}</p>
+              <p className="mt-2 text-base font-bold text-orange">{m.role}</p>
               {m.creds && (
                 <p className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-ink">
                   <GraduationCap className="h-4 w-4 text-ink" />

@@ -241,41 +241,41 @@ function PharmacyServicesPage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-brand pt-32 pb-24 text-white md:pt-40 md:pb-32">
-        <div className="hex-grid absolute inset-0 opacity-40" aria-hidden />
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand/15 via-white to-orange/20 pt-32 pb-24 text-ink md:pt-40 md:pb-32">
+        <div className="hex-grid absolute inset-0 opacity-[0.12]" aria-hidden />
         <div className="relative mx-auto max-w-[1500px] px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             
             {/* Left Hero */}
             <div className="lg:col-span-6 xl:col-span-7">
               <Reveal>
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-amber-300 uppercase">
+                <div className="inline-flex items-center gap-2 rounded-full bg-brand-soft text-brand border border-brand/20 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase">
                   <Sparkles className="h-3.5 w-3.5" />
                   Premium Hospital Operations
                 </div>
-                <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl xl:text-6xl">
+                <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl xl:text-6xl text-ink">
                   Hospital Pharmacy Acquisition &amp; Management Services
                 </h1>
-                <p className="mt-6 text-lg leading-relaxed text-white/90">
+                <p className="mt-6 text-lg leading-relaxed text-ink-soft">
                   Amretri Healthcare helps hospitals outsource, manage and improve their pharmacy operations with better procurement, trained pharmacists, inventory control, compliance support and transparent commercial models.
                 </p>
                 
                 {/* Horizontal Banner Badges */}
-                <div className="mt-8 grid grid-cols-2 gap-4 border-t border-white/10 pt-8 text-xs font-semibold text-white/90 md:grid-cols-4">
+                <div className="mt-8 grid grid-cols-2 gap-4 border-t border-border pt-8 text-xs font-semibold text-ink-soft md:grid-cols-4">
                   <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-emerald-400" />
+                    <Check className="h-4 w-4 shrink-0 text-brand" />
                     Better Procurement
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-emerald-400" />
+                    <Check className="h-4 w-4 shrink-0 text-brand" />
                     Better Stock Control
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-emerald-400" />
+                    <Check className="h-4 w-4 shrink-0 text-brand" />
                     Better Pharmacist Support
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-emerald-400" />
+                    <Check className="h-4 w-4 shrink-0 text-brand" />
                     Better Profitability
                   </div>
                 </div>
@@ -283,14 +283,14 @@ function PharmacyServicesPage() {
                 <div className="mt-10 flex flex-wrap gap-4">
                   <button
                     onClick={scrollToContact}
-                    className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-brand-deep shadow-lg hover:bg-white/90 transition"
+                    className="group flex items-center gap-3 rounded-full bg-orange px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-orange/20 hover:bg-orange/95 hover:scale-105 transition"
                   >
                     Request Takeover Proposal
                     <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                   <button
                     onClick={scrollToContact}
-                    className="flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold hover:bg-white/20 transition"
+                    className="flex items-center gap-2 rounded-full border border-brand bg-transparent text-brand px-6 py-3.5 text-sm font-semibold hover:bg-orange/10 hover:border-orange hover:text-orange transition"
                   >
                     Book a Pharmacy Review
                   </button>
@@ -302,7 +302,7 @@ function PharmacyServicesPage() {
             <div className="lg:col-span-6 xl:col-span-5">
               <Reveal variant="right" className="relative mx-auto max-w-lg lg:max-w-none">
                 <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-brand-soft via-brand-deep to-brand opacity-30 blur-2xl" />
-                <div className="relative overflow-hidden rounded-3xl border border-white/20 shadow-2xl bg-brand-deep">
+                <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl bg-brand-deep">
                   <img 
                     src={heroImg} 
                     alt="Hospital pharmacy acquisition and management services by Amretri Healthcare for hospital pharmacy outsourcing, pharmacy operations, inventory control, procurement and compliance in India." 
@@ -327,7 +327,7 @@ function PharmacyServicesPage() {
       <section className="bg-secondary/30 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-8">
           <Reveal className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">The Operational Challenge</p>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">The Operational Challenge</p>
             <h2 className="mt-4 text-3xl font-extrabold md:text-5xl">Why Hospitals Choose Pharmacy Management</h2>
             <p className="mx-auto mt-4 max-w-3xl text-sm text-ink-soft md:text-base">
               Running a hospital pharmacy looks simple from the outside, but it often becomes one of the most difficult departments to control. Amretri Healthcare takes over this operational burden entirely.
@@ -355,7 +355,7 @@ function PharmacyServicesPage() {
                   </p>
                 </div>
                 <div className="mt-6 border-t border-border pt-4">
-                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-600 uppercase tracking-wider">
+                  <div className="flex items-center gap-2 text-xs font-bold text-brand uppercase tracking-wider">
                     <ShieldCheck className="h-4 w-4" />
                     Amretri Solution
                   </div>
@@ -377,7 +377,7 @@ function PharmacyServicesPage() {
             {/* Left Description */}
             <div className="lg:col-span-5">
               <Reveal variant="left">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">Comprehensive Support</p>
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">Comprehensive Support</p>
                 <h2 className="mt-4 text-3xl font-extrabold md:text-5xl">What Amretri Healthcare Does</h2>
                 <p className="mt-6 text-sm leading-relaxed text-ink-soft md:text-base">
                   Amretri Healthcare provides end-to-end hospital pharmacy acquisition and management services. Depending on your needs, we take over, operate, manage or support your setup under a mutually accountable model.
@@ -424,7 +424,7 @@ function PharmacyServicesPage() {
       <section className="bg-ink py-24 text-white md:py-32">
         <div className="mx-auto max-w-7xl px-8">
           <Reveal className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-soft">Operations Protocol</p>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">Operations Protocol</p>
             <h2 className="mt-4 text-3xl font-extrabold md:text-5xl">Our Hospital Pharmacy Management Model</h2>
             <p className="mx-auto mt-4 max-w-3xl text-sm text-white/70 md:text-base">
               A structured transition, procurement, and management system designed for hospitals, nursing homes, and healthcare institutions across India.
@@ -512,7 +512,7 @@ function PharmacyServicesPage() {
                   { title: "Financial Predictability", desc: "Transparent MIS reporting with flexible commercial models (payouts or revenue sharing)." }
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 bg-card p-4 rounded-xl border border-border shadow-sm">
-                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-600">
+                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-orange/10 text-orange">
                       <Check className="h-3.5 w-3.5" />
                     </span>
                     <div>
@@ -698,7 +698,7 @@ function PharmacyServicesPage() {
       <section className="bg-background py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-8">
           <Reveal className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">FAQs</p>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">FAQs</p>
             <h2 className="mt-4 text-3xl font-extrabold md:text-5xl">Frequently Asked Questions</h2>
           </Reveal>
 
@@ -712,8 +712,8 @@ function PharmacyServicesPage() {
                   className="group block w-full px-6 py-5 text-left transition hover:bg-secondary/30"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm font-bold text-ink transition-colors group-hover:text-brand md:text-base">{f.q}</span>
-                    <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition-all duration-300 ${isOpen ? "bg-brand text-white rotate-180" : "bg-secondary text-brand group-hover:bg-brand group-hover:text-white"}`}>
+                    <span className="text-sm font-bold text-ink transition-colors group-hover:text-orange md:text-base">{f.q}</span>
+                    <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition-all duration-300 ${isOpen ? "bg-brand text-white rotate-180" : "bg-secondary text-brand group-hover:bg-orange/10 group-hover:text-orange"}`}>
                       {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                     </span>
                   </div>

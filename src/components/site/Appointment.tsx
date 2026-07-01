@@ -102,7 +102,7 @@ export function Appointment() {
                   className="group mt-4 inline-flex items-center gap-3 self-start text-lg font-semibold text-white md:col-span-2 hover:gap-4 transition-all"
                 >
                   Book a Consultation
-                  <span className="grid h-11 w-11 place-items-center rounded-full border border-white/70 transition group-hover:rotate-45 group-hover:bg-white group-hover:text-brand">
+                  <span className="grid h-11 w-11 place-items-center rounded-full border border-white/70 transition group-hover:rotate-45 group-hover:bg-orange group-hover:text-white group-hover:border-orange">
                     <ArrowUpRight className="h-5 w-5" />
                   </span>
                 </button>

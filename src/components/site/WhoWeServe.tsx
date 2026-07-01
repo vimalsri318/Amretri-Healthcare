@@ -23,14 +23,14 @@ export function WhoWeServe() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">Who We Serve</p>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">Who We Serve</p>
             <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">Healthcare Partners</h2>
             <p className="mt-4 text-base text-ink-soft">
               At Amretri Healthcare Pvt. Ltd., we partner with providers across India to deliver
               seamless, compliant, profitable pharmacy, pathology lab and radiology operations.
             </p>
           </div>
-          <a href="/#contact" className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand hover-glow">
+          <a href="/#contact" className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange hover:shadow-lg hover:shadow-orange/20 hover-glow">
             Partner With Us <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
         </Reveal>
@@ -42,13 +42,13 @@ export function WhoWeServe() {
               as="article"
               delay={(i % 3) * 80}
               variant={i % 3 === 0 ? "left" : i % 3 === 1 ? "up" : "right"}
-              className="group overflow-hidden rounded-3xl border border-border bg-card hover-lift hover:border-brand/40"
+              className="group overflow-hidden rounded-3xl border border-border bg-card hover-lift hover:border-brand"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={p.img} alt={p.title} width={800} height={600} loading="lazy" className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold transition-colors group-hover:text-brand">{p.title}</h3>
+                <h3 className="text-xl font-bold transition-colors group-hover:text-orange">{p.title}</h3>
                 <p className="mt-2 text-sm text-ink-soft">{p.body}</p>
               </div>
             </Reveal>

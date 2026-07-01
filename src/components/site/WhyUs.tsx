@@ -44,7 +44,7 @@ export function WhyUs() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 md:grid-cols-12">
           <Reveal variant="left" className="md:col-span-5">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand">Why Amretri</p>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange">Why Amretri</p>
             <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">
               Experience. Expansion. <span className="text-brand">Excellence.</span>
             </h2>
@@ -63,7 +63,7 @@ export function WhyUs() {
                   variant={i % 2 === 0 ? "left" : "right"}
                   className="group rounded-2xl border border-border bg-card p-6 hover-lift hover:border-brand/40"
                 >
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand/10 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand/10 text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-orange group-hover:text-white">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 text-lg font-bold">{it.title}</h3>
@@ -74,7 +74,7 @@ export function WhyUs() {
           </div>
         </div>
 
-        <Reveal variant="scale" className="mt-20 rounded-3xl bg-brand p-8 text-white md:p-12">
+        <Reveal variant="scale" className="mt-20 rounded-3xl bg-gradient-to-br from-brand to-brand-deep p-8 text-white md:p-12">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/70">By the numbers</p>
@@ -85,13 +85,13 @@ export function WhyUs() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/15 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/20 md:grid-cols-3">
             {stats.map((s, i) => (
               <Reveal
                 key={s.label}
                 delay={(i % 3) * 80}
                 variant={i % 3 === 0 ? "left" : i % 3 === 1 ? "scale" : "right"}
-                className="bg-brand p-6 transition hover:bg-brand-deep"
+                className="bg-transparent p-6 transition hover:bg-white/5"
               >
                 <div className="text-4xl font-extrabold md:text-5xl transition-transform duration-300 hover:scale-105 origin-left">{s.value}</div>
                 <div className="mt-2 text-sm font-semibold">{s.label}</div>
