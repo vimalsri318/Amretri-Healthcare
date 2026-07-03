@@ -605,7 +605,7 @@ export function ChatBot() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+      <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 flex flex-col items-center gap-3">
         {/* WhatsApp Button */}
         <a
           href="https://wa.me/919886200349?text=Hello%20Amretri%20Healthcare%2C%20I%20would%20like%20to%20know%20more%20about%20your%20hospital%20operations%20solutions%20(Pharmacy%2C%20Laboratory%2C%20and%20Radiology)."
@@ -654,7 +654,7 @@ export function ChatBot() {
       {open && (
         <div 
           data-lenis-prevent 
-          className="fixed bottom-40 right-6 z-50 flex h-[35rem] w-[24rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-2xl animate-fade-in"
+          className="fixed bottom-20 md:bottom-24 right-4 md:right-6 z-50 flex h-[32rem] md:h-[35rem] max-h-[calc(100vh-7rem)] w-[24rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-2xl animate-fade-in"
         >
           {/* Header */}
           <div className="flex items-center gap-3 bg-gradient-to-r from-brand to-brand-deep p-4 text-white">
