@@ -50,12 +50,12 @@ const customFlows: Record<string, { steps: string[]; successMessage: string }> =
   }
 };
 
-const CONVERSATIONAL_VERBS = [
+const CONVERSATIONAL_VERBS = new Set([
   "give", "gave", "given", "have", "had", "has", "want", "need", "go", "went", "gone",
   "tell", "told", "ask", "asked", "say", "said", "know", "knew", "known", "think", "thought",
   "what", "how", "why", "who", "which", "where", "when", "does", "do", "did", "is", "am", "are", "was", "were",
-  "hav", "havent", "dont", "cant", "wont", "should", "could", "would", "please", "call"
-];
+  "havit", "havent", "dont", "cant", "wont", "should", "could", "would", "please", "call"
+]);
 
 function getQueryTokens(text: string): string[] {
   return text.toLowerCase()
@@ -220,13 +220,11 @@ function isLikelyConversationalPhrase(text: string): boolean {
   
   if (words.length > 3) {
     const hasPronoun = words.some(w => ["i", "you", "me", "my", "we", "us", "he", "she", "they"].includes(w));
-    const hasVerb = words.some(w => 
-      CONVERSATIONAL_VERBS.some(v => w.startsWith(v) || w.endsWith(v))
-    );
-    return hasPronoun || hasVerb;
+    const hasVerb = words.some(w => CONVERSATIONAL_VERBS.has(w));
+    return hasPronoun && hasVerb;
   }
   
-  if (cleanText.includes("?") || words.some(w => ["what", "how", "why", "who", "which"].includes(w))) {
+  if (cleanText.includes("?") || words.some(w => ["what", "how", "why", "who", "which", "when", "where", "can"].includes(w))) {
     return true;
   }
   
@@ -263,7 +261,7 @@ function validateStepInput(field: string, input: string): string | null {
     }
   }
 
-  if (f.includes("contact") || f.includes("number") || f.includes("phone") || f.includes("email")) {
+  if (f.includes("contact") || f.includes("phone") || f.includes("email")) {
     const hasPhoneDigits = (clean.match(/\d/g) || []).length >= 8;
     const hasEmailSign = clean.includes("@");
     if (!hasPhoneDigits && !hasEmailSign) {
@@ -610,7 +608,7 @@ export function ChatBot() {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/919886200349?text=Hello%20Amretri%20Healthcare%2C%20I%20would%20like%20to%2520know%2520more%2520about%2520your%2520hospital%2520operations%2520solutions%2520(Pharmacy%2C%20Laboratory%2C%20and%20Radiology)."
+          href="https://wa.me/919886200349?text=Hello%20Amretri%20Healthcare%2C%20I%20would%20like%20to%20know%20more%20about%20your%20hospital%20operations%20solutions%20(Pharmacy%2C%20Laboratory%2C%20and%20Radiology)."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contact us on WhatsApp"
