@@ -4,42 +4,74 @@ import { Reveal } from "./Reveal";
 const solutions = [
   {
     icon: Pill,
-    title: "Pharmacy Management",
-    tagline: "We fix broken pharmacy systems and unlock hidden profits.",
-    margin: "5–30%",
+    title: "Pharmacy Acquisition & Management",
+    tagline: "Outsource or hand over your hospital pharmacy operations.",
+    margin: "High ROI",
     link: "/hospital-pharmacy-acquisition-management-services",
     points: [
-      "AI-powered inventory & expiry control",
-      "Leak-proof billing & theft prevention",
-      "GST-ready audit compliance",
-      "Smart procurement & vendor control",
-      "Live MIS dashboards",
+      "Zero operational headache",
+      "Guaranteed compliance & audits",
+      "Profitability improvement",
     ],
   },
   {
-    icon: FlaskConical,
-    title: "Laboratory Management",
-    tagline: "We eliminate revenue leakage and operational blind spots.",
-    margin: "Predictable",
+    icon: FlaskConical, // can use Users icon later
+    title: "Pharmacist Supply & Staffing",
+    tagline: "Get trained, verified, and reliable pharmacists for your hospital.",
+    margin: "Reliable",
+    link: "/pharmacist-supply-staffing-services",
     points: [
-      "End-to-end sample tracking",
-      "Zero-leakage billing",
-      "Audit-ready documentation",
-      "Optimized reagent buying",
-      "Real-time dashboards",
+      "Pre-screened professionals",
+      "Emergency replacements",
+      "Shift management",
+    ],
+  },
+  {
+    icon: ScanLine, // can use Package icon later
+    title: "Bulk Medicine Procurement",
+    tagline: "Get better purchase rates and reduce procurement costs.",
+    margin: "Savings",
+    link: "/bulk-medicine-procurement-for-hospitals",
+    points: [
+      "Direct manufacturer rates",
+      "Optimized vendor negotiation",
+      "Consistent supply chain",
+    ],
+  },
+  {
+    icon: Pill, // reuse or import others
+    title: "Inventory & Stock Control",
+    tagline: "Stop losing money to expired medicines and dead stock.",
+    margin: "Control",
+    link: "/#contact", // Phase 2
+    points: [
+      "FEFO tracking",
+      "ABC & VED analysis",
+      "Stock-out prevention",
     ],
   },
   {
     icon: ScanLine,
-    title: "Radiology Management",
-    tagline: "We turn idle machines into ROI-generating assets.",
-    margin: "Peak ROI",
+    title: "Pharmacy Compliance & Audit",
+    tagline: "Stay 100% compliant with drug licenses and NABH readiness.",
+    margin: "Secure",
+    link: "/#contact", // Phase 2
     points: [
-      "Optimized scheduling",
-      "Revenue-secure billing",
-      "Compliance & audits ready",
-      "AMC & vendor optimization",
-      "Leadership MIS visibility",
+      "Narcotic registers",
+      "Cold chain maintenance",
+      "Standard SOPs",
+    ],
+  },
+  {
+    icon: FlaskConical,
+    title: "Consulting & Profit Improvement",
+    tagline: "Improve your in-house margins without outsourcing.",
+    margin: "Growth",
+    link: "/#contact", // Phase 2
+    points: [
+      "Margin leakage reduction",
+      "Profitability analysis",
+      "Procurement review",
     ],
   },
 ];

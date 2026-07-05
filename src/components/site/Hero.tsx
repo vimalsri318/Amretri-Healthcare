@@ -1,5 +1,6 @@
 import doctorImg from "@/assets/doctor-hero.png";
 import { ArrowUpRight, Stethoscope, ThumbsUp, Star } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Hero() {
   return (
@@ -47,22 +48,37 @@ export function Hero() {
         {/* LEFT — Headline */}
         <div className="md:col-span-4 md:pr-4">
           <h1 className="text-3xl font-extrabold leading-[1.1] tracking-tight md:text-[1.85rem] lg:text-[2.15rem] xl:text-[2.35rem] animate-fade-up [text-shadow:0_2px_12px_rgba(0,0,0,0.05)] text-ink">
-            Empowering Hospitals with Seamless Pharmacy, Laboratory &amp; Radiology Solutions.
+            Transforming Hospital Pharmacy Operations Across India
           </h1>
           <p className="mt-5 max-w-sm text-sm text-ink-soft md:text-[15px] animate-fade-up">
-            Amretri Healthcare partners with hospitals to operate Pharmacy, Laboratory
-            and Radiology services — improving patient experience, compliance and margins.
+            Hospital Pharmacy Management, Pharmacist Supply, Bulk Medicine Procurement and Pharmacy Profit Improvement Solutions.
           </p>
 
-          <a
-            href="/#solutions"
-            className="group mt-8 inline-flex items-center gap-4 text-base font-semibold text-brand animate-fade-up"
-          >
-            <span className="border-b border-brand/50 pb-1 transition-colors group-hover:border-brand">Explore Our Solutions</span>
-            <span className="grid h-12 w-12 place-items-center rounded-full border border-brand/40 transition group-hover:bg-orange group-hover:text-white group-hover:border-orange">
-              <ArrowUpRight className="h-5 w-5" />
-            </span>
-          </a>
+          <div className="mt-8 flex flex-col gap-3 animate-fade-up">
+            <Link
+              to="/hospital-pharmacy-acquisition-management-services"
+              className="group inline-flex items-center gap-4 text-base font-semibold text-brand"
+            >
+              <span className="border-b border-brand/50 pb-1 transition-colors group-hover:border-brand">Request Pharmacy Review</span>
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-brand/40 transition group-hover:bg-orange group-hover:text-white group-hover:border-orange">
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </Link>
+            <Link
+              to="/pharmacist-supply-staffing-services"
+              className="group inline-flex items-center gap-4 text-sm font-semibold text-ink-soft hover:text-brand transition-colors"
+            >
+              <span>Hire Pharmacists</span>
+              <ArrowUpRight className="h-4 w-4 opacity-50 group-hover:opacity-100" />
+            </Link>
+            <Link
+              to="/bulk-medicine-procurement-for-hospitals"
+              className="group inline-flex items-center gap-4 text-sm font-semibold text-ink-soft hover:text-brand transition-colors"
+            >
+              <span>Improve Purchase Rates</span>
+              <ArrowUpRight className="h-4 w-4 opacity-50 group-hover:opacity-100" />
+            </Link>
+          </div>
         </div>
 
         {/* CENTER spacer + rating pill */}

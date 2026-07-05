@@ -9,13 +9,39 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RegisterAsPharmacistRouteImport } from './routes/register-as-pharmacist'
+import { Route as PharmacistSupplyStaffingServicesRouteImport } from './routes/pharmacist-supply-staffing-services'
 import { Route as HospitalPharmacyAcquisitionManagementServicesRouteImport } from './routes/hospital-pharmacy-acquisition-management-services'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BulkMedicineProcurementForHospitalsRouteImport } from './routes/bulk-medicine-procurement-for-hospitals'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RegisterAsPharmacistRoute = RegisterAsPharmacistRouteImport.update({
+  id: '/register-as-pharmacist',
+  path: '/register-as-pharmacist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PharmacistSupplyStaffingServicesRoute =
+  PharmacistSupplyStaffingServicesRouteImport.update({
+    id: '/pharmacist-supply-staffing-services',
+    path: '/pharmacist-supply-staffing-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HospitalPharmacyAcquisitionManagementServicesRoute =
   HospitalPharmacyAcquisitionManagementServicesRouteImport.update({
     id: '/hospital-pharmacy-acquisition-management-services',
     path: '/hospital-pharmacy-acquisition-management-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BulkMedicineProcurementForHospitalsRoute =
+  BulkMedicineProcurementForHospitalsRouteImport.update({
+    id: '/bulk-medicine-procurement-for-hospitals',
+    path: '/bulk-medicine-procurement-for-hospitals',
     getParentRoute: () => rootRouteImport,
   } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -26,37 +52,100 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bulk-medicine-procurement-for-hospitals': typeof BulkMedicineProcurementForHospitalsRoute
+  '/contact': typeof ContactRoute
   '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
+  '/pharmacist-supply-staffing-services': typeof PharmacistSupplyStaffingServicesRoute
+  '/register-as-pharmacist': typeof RegisterAsPharmacistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bulk-medicine-procurement-for-hospitals': typeof BulkMedicineProcurementForHospitalsRoute
+  '/contact': typeof ContactRoute
   '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
+  '/pharmacist-supply-staffing-services': typeof PharmacistSupplyStaffingServicesRoute
+  '/register-as-pharmacist': typeof RegisterAsPharmacistRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bulk-medicine-procurement-for-hospitals': typeof BulkMedicineProcurementForHospitalsRoute
+  '/contact': typeof ContactRoute
   '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
+  '/pharmacist-supply-staffing-services': typeof PharmacistSupplyStaffingServicesRoute
+  '/register-as-pharmacist': typeof RegisterAsPharmacistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hospital-pharmacy-acquisition-management-services'
+  fullPaths:
+    | '/'
+    | '/bulk-medicine-procurement-for-hospitals'
+    | '/contact'
+    | '/hospital-pharmacy-acquisition-management-services'
+    | '/pharmacist-supply-staffing-services'
+    | '/register-as-pharmacist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/hospital-pharmacy-acquisition-management-services'
-  id: '__root__' | '/' | '/hospital-pharmacy-acquisition-management-services'
+  to:
+    | '/'
+    | '/bulk-medicine-procurement-for-hospitals'
+    | '/contact'
+    | '/hospital-pharmacy-acquisition-management-services'
+    | '/pharmacist-supply-staffing-services'
+    | '/register-as-pharmacist'
+  id:
+    | '__root__'
+    | '/'
+    | '/bulk-medicine-procurement-for-hospitals'
+    | '/contact'
+    | '/hospital-pharmacy-acquisition-management-services'
+    | '/pharmacist-supply-staffing-services'
+    | '/register-as-pharmacist'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BulkMedicineProcurementForHospitalsRoute: typeof BulkMedicineProcurementForHospitalsRoute
+  ContactRoute: typeof ContactRoute
   HospitalPharmacyAcquisitionManagementServicesRoute: typeof HospitalPharmacyAcquisitionManagementServicesRoute
+  PharmacistSupplyStaffingServicesRoute: typeof PharmacistSupplyStaffingServicesRoute
+  RegisterAsPharmacistRoute: typeof RegisterAsPharmacistRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/register-as-pharmacist': {
+      id: '/register-as-pharmacist'
+      path: '/register-as-pharmacist'
+      fullPath: '/register-as-pharmacist'
+      preLoaderRoute: typeof RegisterAsPharmacistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pharmacist-supply-staffing-services': {
+      id: '/pharmacist-supply-staffing-services'
+      path: '/pharmacist-supply-staffing-services'
+      fullPath: '/pharmacist-supply-staffing-services'
+      preLoaderRoute: typeof PharmacistSupplyStaffingServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hospital-pharmacy-acquisition-management-services': {
       id: '/hospital-pharmacy-acquisition-management-services'
       path: '/hospital-pharmacy-acquisition-management-services'
       fullPath: '/hospital-pharmacy-acquisition-management-services'
       preLoaderRoute: typeof HospitalPharmacyAcquisitionManagementServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bulk-medicine-procurement-for-hospitals': {
+      id: '/bulk-medicine-procurement-for-hospitals'
+      path: '/bulk-medicine-procurement-for-hospitals'
+      fullPath: '/bulk-medicine-procurement-for-hospitals'
+      preLoaderRoute: typeof BulkMedicineProcurementForHospitalsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -71,8 +160,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BulkMedicineProcurementForHospitalsRoute:
+    BulkMedicineProcurementForHospitalsRoute,
+  ContactRoute: ContactRoute,
   HospitalPharmacyAcquisitionManagementServicesRoute:
     HospitalPharmacyAcquisitionManagementServicesRoute,
+  PharmacistSupplyStaffingServicesRoute: PharmacistSupplyStaffingServicesRoute,
+  RegisterAsPharmacistRoute: RegisterAsPharmacistRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

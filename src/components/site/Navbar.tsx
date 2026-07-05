@@ -5,11 +5,9 @@ import logoAsset from "@/assets/amretri-logo.png";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Solutions", href: "/#solutions" },
-  { label: "Why Us", href: "/#why" },
-  { label: "Who We Serve", href: "/#serve" },
-  { label: "Leadership", href: "/#leadership" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "About Us", href: "/#why" },
+  { label: "Services", href: "/#solutions" },
+  { label: "For Pharmacists", href: "/register-as-pharmacist" },
 ];
 
 export function Navbar() {
@@ -52,12 +50,12 @@ export function Navbar() {
 
         {/* CTA Column */}
         <div className="flex items-center gap-3">
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="hidden rounded-full bg-orange px-6 py-3 text-base font-bold text-white transition hover:bg-orange/90 md:inline-flex shadow-sm shadow-orange/10"
           >
             Contact Us
-          </a>
+          </Link>
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen(!open)}
@@ -81,9 +79,9 @@ export function Navbar() {
               </a>
             );
           })}
-          <a href="/#contact" className="mt-2 block rounded-full bg-orange px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-orange/90">
+          <Link to="/contact" className="mt-2 block rounded-full bg-orange px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-orange/90">
             Contact Us
-          </a>
+          </Link>
         </div>
       )}
     </header>
