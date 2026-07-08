@@ -1,4 +1,5 @@
 import { Mail, Phone, ArrowUpRight, Facebook, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/amretri-logo.png";
 import { Reveal } from "./Reveal";
 
@@ -73,11 +74,11 @@ export function CtaFooter() {
           <div className="md:col-span-3">
             <h4 className="text-lg font-extrabold text-accent">Quick Links</h4>
             <ul className="mt-5 space-y-3 text-sm text-white">
-              <li><a href="/#why" className="text-accent hover:text-orange hover:underline transition-colors">About Us</a></li>
-              <li><a href="/#leadership" className="text-accent hover:text-orange hover:underline transition-colors">Chairman's Message</a></li>
-              <li><a href="/#contact" className="text-accent hover:text-orange hover:underline transition-colors">Contact Us</a></li>
-              <li><a href="/#disclaimer" className="text-accent hover:text-orange hover:underline transition-colors">Disclaimer</a></li>
-              <li><a href="/#terms" className="text-accent hover:text-orange hover:underline transition-colors">Terms &amp; Conditions</a></li>
+              <li><Link to="/about" className="text-accent hover:text-orange hover:underline transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="text-accent hover:text-orange hover:underline transition-colors">Leadership</Link></li>
+              <li><Link to="/services" className="text-accent hover:text-orange hover:underline transition-colors">Services</Link></li>
+              <li><Link to="/contact" className="text-accent hover:text-orange hover:underline transition-colors">Contact Us</Link></li>
+              <li><Link to="/register-as-pharmacist" className="text-accent hover:text-orange hover:underline transition-colors">Pharmacist Registration</Link></li>
             </ul>
           </div>
 

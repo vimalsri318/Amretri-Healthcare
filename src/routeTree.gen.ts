@@ -14,7 +14,15 @@ import { Route as PharmacistSupplyStaffingServicesRouteImport } from './routes/p
 import { Route as HospitalPharmacyAcquisitionManagementServicesRouteImport } from './routes/hospital-pharmacy-acquisition-management-services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BulkMedicineProcurementForHospitalsRouteImport } from './routes/bulk-medicine-procurement-for-hospitals'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesPharmacistSupplyStaffingRouteImport } from './routes/services/pharmacist-supply-staffing'
+import { Route as ServicesInventoryStockControlRouteImport } from './routes/services/inventory-stock-control'
+import { Route as ServicesHospitalPharmacyAcquisitionManagementRouteImport } from './routes/services/hospital-pharmacy-acquisition-management'
+import { Route as ServicesConsultingProfitImprovementRouteImport } from './routes/services/consulting-profit-improvement'
+import { Route as ServicesComplianceAuditRouteImport } from './routes/services/compliance-audit'
+import { Route as ServicesBulkMedicineProcurementRouteImport } from './routes/services/bulk-medicine-procurement'
 
 const RegisterAsPharmacistRoute = RegisterAsPharmacistRouteImport.update({
   id: '/register-as-pharmacist',
@@ -44,71 +52,172 @@ const BulkMedicineProcurementForHospitalsRoute =
     path: '/bulk-medicine-procurement-for-hospitals',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesPharmacistSupplyStaffingRoute =
+  ServicesPharmacistSupplyStaffingRouteImport.update({
+    id: '/services/pharmacist-supply-staffing',
+    path: '/services/pharmacist-supply-staffing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesInventoryStockControlRoute =
+  ServicesInventoryStockControlRouteImport.update({
+    id: '/services/inventory-stock-control',
+    path: '/services/inventory-stock-control',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesHospitalPharmacyAcquisitionManagementRoute =
+  ServicesHospitalPharmacyAcquisitionManagementRouteImport.update({
+    id: '/services/hospital-pharmacy-acquisition-management',
+    path: '/services/hospital-pharmacy-acquisition-management',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesConsultingProfitImprovementRoute =
+  ServicesConsultingProfitImprovementRouteImport.update({
+    id: '/services/consulting-profit-improvement',
+    path: '/services/consulting-profit-improvement',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesComplianceAuditRoute = ServicesComplianceAuditRouteImport.update({
+  id: '/services/compliance-audit',
+  path: '/services/compliance-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesBulkMedicineProcurementRoute =
+  ServicesBulkMedicineProcurementRouteImport.update({
+    id: '/services/bulk-medicine-procurement',
+    path: '/services/bulk-medicine-procurement',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bulk-medicine-procurement-for-hospitals': typeof BulkMedicineProcurementForHospitalsRoute
   '/contact': typeof ContactRoute
   '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
   '/pharmacist-supply-staffing-services': typeof PharmacistSupplyStaffingServicesRoute
   '/register-as-pharmacist': typeof RegisterAsPharmacistRoute
+  '/services/bulk-medicine-procurement': typeof ServicesBulkMedicineProcurementRoute
+  '/services/compliance-audit': typeof ServicesComplianceAuditRoute
+  '/services/consulting-profit-improvement': typeof ServicesConsultingProfitImprovementRoute
+  '/services/hospital-pharmacy-acquisition-management': typeof ServicesHospitalPharmacyAcquisitionManagementRoute
+  '/services/inventory-stock-control': typeof ServicesInventoryStockControlRoute
+  '/services/pharmacist-supply-staffing': typeof ServicesPharmacistSupplyStaffingRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bulk-medicine-procurement-for-hospitals': typeof BulkMedicineProcurementForHospitalsRoute
   '/contact': typeof ContactRoute
   '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
   '/pharmacist-supply-staffing-services': typeof PharmacistSupplyStaffingServicesRoute
   '/register-as-pharmacist': typeof RegisterAsPharmacistRoute
+  '/services/bulk-medicine-procurement': typeof ServicesBulkMedicineProcurementRoute
+  '/services/compliance-audit': typeof ServicesComplianceAuditRoute
+  '/services/consulting-profit-improvement': typeof ServicesConsultingProfitImprovementRoute
+  '/services/hospital-pharmacy-acquisition-management': typeof ServicesHospitalPharmacyAcquisitionManagementRoute
+  '/services/inventory-stock-control': typeof ServicesInventoryStockControlRoute
+  '/services/pharmacist-supply-staffing': typeof ServicesPharmacistSupplyStaffingRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bulk-medicine-procurement-for-hospitals': typeof BulkMedicineProcurementForHospitalsRoute
   '/contact': typeof ContactRoute
   '/hospital-pharmacy-acquisition-management-services': typeof HospitalPharmacyAcquisitionManagementServicesRoute
   '/pharmacist-supply-staffing-services': typeof PharmacistSupplyStaffingServicesRoute
   '/register-as-pharmacist': typeof RegisterAsPharmacistRoute
+  '/services/bulk-medicine-procurement': typeof ServicesBulkMedicineProcurementRoute
+  '/services/compliance-audit': typeof ServicesComplianceAuditRoute
+  '/services/consulting-profit-improvement': typeof ServicesConsultingProfitImprovementRoute
+  '/services/hospital-pharmacy-acquisition-management': typeof ServicesHospitalPharmacyAcquisitionManagementRoute
+  '/services/inventory-stock-control': typeof ServicesInventoryStockControlRoute
+  '/services/pharmacist-supply-staffing': typeof ServicesPharmacistSupplyStaffingRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/bulk-medicine-procurement-for-hospitals'
     | '/contact'
     | '/hospital-pharmacy-acquisition-management-services'
     | '/pharmacist-supply-staffing-services'
     | '/register-as-pharmacist'
+    | '/services/bulk-medicine-procurement'
+    | '/services/compliance-audit'
+    | '/services/consulting-profit-improvement'
+    | '/services/hospital-pharmacy-acquisition-management'
+    | '/services/inventory-stock-control'
+    | '/services/pharmacist-supply-staffing'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/bulk-medicine-procurement-for-hospitals'
     | '/contact'
     | '/hospital-pharmacy-acquisition-management-services'
     | '/pharmacist-supply-staffing-services'
     | '/register-as-pharmacist'
+    | '/services/bulk-medicine-procurement'
+    | '/services/compliance-audit'
+    | '/services/consulting-profit-improvement'
+    | '/services/hospital-pharmacy-acquisition-management'
+    | '/services/inventory-stock-control'
+    | '/services/pharmacist-supply-staffing'
+    | '/services'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/bulk-medicine-procurement-for-hospitals'
     | '/contact'
     | '/hospital-pharmacy-acquisition-management-services'
     | '/pharmacist-supply-staffing-services'
     | '/register-as-pharmacist'
+    | '/services/bulk-medicine-procurement'
+    | '/services/compliance-audit'
+    | '/services/consulting-profit-improvement'
+    | '/services/hospital-pharmacy-acquisition-management'
+    | '/services/inventory-stock-control'
+    | '/services/pharmacist-supply-staffing'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BulkMedicineProcurementForHospitalsRoute: typeof BulkMedicineProcurementForHospitalsRoute
   ContactRoute: typeof ContactRoute
   HospitalPharmacyAcquisitionManagementServicesRoute: typeof HospitalPharmacyAcquisitionManagementServicesRoute
   PharmacistSupplyStaffingServicesRoute: typeof PharmacistSupplyStaffingServicesRoute
   RegisterAsPharmacistRoute: typeof RegisterAsPharmacistRoute
+  ServicesBulkMedicineProcurementRoute: typeof ServicesBulkMedicineProcurementRoute
+  ServicesComplianceAuditRoute: typeof ServicesComplianceAuditRoute
+  ServicesConsultingProfitImprovementRoute: typeof ServicesConsultingProfitImprovementRoute
+  ServicesHospitalPharmacyAcquisitionManagementRoute: typeof ServicesHospitalPharmacyAcquisitionManagementRoute
+  ServicesInventoryStockControlRoute: typeof ServicesInventoryStockControlRoute
+  ServicesPharmacistSupplyStaffingRoute: typeof ServicesPharmacistSupplyStaffingRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -148,6 +257,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BulkMedicineProcurementForHospitalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -155,11 +271,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/pharmacist-supply-staffing': {
+      id: '/services/pharmacist-supply-staffing'
+      path: '/services/pharmacist-supply-staffing'
+      fullPath: '/services/pharmacist-supply-staffing'
+      preLoaderRoute: typeof ServicesPharmacistSupplyStaffingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/inventory-stock-control': {
+      id: '/services/inventory-stock-control'
+      path: '/services/inventory-stock-control'
+      fullPath: '/services/inventory-stock-control'
+      preLoaderRoute: typeof ServicesInventoryStockControlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/hospital-pharmacy-acquisition-management': {
+      id: '/services/hospital-pharmacy-acquisition-management'
+      path: '/services/hospital-pharmacy-acquisition-management'
+      fullPath: '/services/hospital-pharmacy-acquisition-management'
+      preLoaderRoute: typeof ServicesHospitalPharmacyAcquisitionManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/consulting-profit-improvement': {
+      id: '/services/consulting-profit-improvement'
+      path: '/services/consulting-profit-improvement'
+      fullPath: '/services/consulting-profit-improvement'
+      preLoaderRoute: typeof ServicesConsultingProfitImprovementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/compliance-audit': {
+      id: '/services/compliance-audit'
+      path: '/services/compliance-audit'
+      fullPath: '/services/compliance-audit'
+      preLoaderRoute: typeof ServicesComplianceAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/bulk-medicine-procurement': {
+      id: '/services/bulk-medicine-procurement'
+      path: '/services/bulk-medicine-procurement'
+      fullPath: '/services/bulk-medicine-procurement'
+      preLoaderRoute: typeof ServicesBulkMedicineProcurementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BulkMedicineProcurementForHospitalsRoute:
     BulkMedicineProcurementForHospitalsRoute,
   ContactRoute: ContactRoute,
@@ -167,6 +333,15 @@ const rootRouteChildren: RootRouteChildren = {
     HospitalPharmacyAcquisitionManagementServicesRoute,
   PharmacistSupplyStaffingServicesRoute: PharmacistSupplyStaffingServicesRoute,
   RegisterAsPharmacistRoute: RegisterAsPharmacistRoute,
+  ServicesBulkMedicineProcurementRoute: ServicesBulkMedicineProcurementRoute,
+  ServicesComplianceAuditRoute: ServicesComplianceAuditRoute,
+  ServicesConsultingProfitImprovementRoute:
+    ServicesConsultingProfitImprovementRoute,
+  ServicesHospitalPharmacyAcquisitionManagementRoute:
+    ServicesHospitalPharmacyAcquisitionManagementRoute,
+  ServicesInventoryStockControlRoute: ServicesInventoryStockControlRoute,
+  ServicesPharmacistSupplyStaffingRoute: ServicesPharmacistSupplyStaffingRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

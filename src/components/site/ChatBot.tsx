@@ -16,7 +16,29 @@ type FlowState = {
   data: Record<string, string>;
 };
 
-const WELCOME_MSG = "Hello, I am AMRI, your Amretri Healthcare Assistant. How can I help you today?";
+// User identification state
+const USER_STORAGE_KEY = "amretri_chat_user";
+
+function getStoredUser(): { name: string; email: string } | null {
+  try {
+    const raw = localStorage.getItem(USER_STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {}
+  return null;
+}
+
+function storeUser(name: string, email: string) {
+  try {
+    localStorage.setItem(USER_STORAGE_KEY, JSON.stringify({ name, email }));
+  } catch {}
+}
+
+function getWelcomeMessage(name?: string): string {
+  if (name) {
+    return `Welcome back, **${name}**! I am AMRI, your Amretri Healthcare Assistant. How can I help you today?`;
+  }
+  return "👋 Welcome! I am **AMRI**, your Amretri Healthcare Assistant. Please enter your details below to get started.";
+}
 
 const PRIMARY_OPTIONS = [
   "I want Amretri to manage my hospital pharmacy",
@@ -302,17 +324,77 @@ const renderText = (text: string) => {
 
 export function ChatBot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Msg[]>([
-    { role: "bot", text: WELCOME_MSG, options: PRIMARY_OPTIONS },
-  ]);
+  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [formName, setFormName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+  const [formError, setFormError] = useState("");
+  const [showForm, setShowForm] = useState(false);
+
+  // Initialize with stored user or identification prompt
+  const getInitialMessages = (): Msg[] => {
+    const stored = getStoredUser();
+    if (stored) {
+      return [{ role: "bot", text: getWelcomeMessage(stored.name), options: PRIMARY_OPTIONS }];
+    }
+    return [{ role: "bot", text: getWelcomeMessage() }];
+  };
+
+  const [messages, setMessages] = useState<Msg[]>(getInitialMessages);
   const [flow, setFlow] = useState<FlowState | null>(null);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
 
+  // Initialize user state from storage
+  useEffect(() => {
+    const stored = getStoredUser();
+    if (stored) {
+      setUser(stored);
+    } else {
+      setShowForm(true);
+    }
+  }, []);
+
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open, isTyping]);
+
+  const completeIdentification = (name: string, email: string) => {
+    setUser({ name, email });
+    storeUser(name, email);
+    setShowForm(false);
+    setFormName("");
+    setFormEmail("");
+    setFormError("");
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "bot",
+        text: `Wonderful, **${name}**! You're all set. I'm here to help with anything related to hospital pharmacy operations. What can I assist you with today?`,
+        options: PRIMARY_OPTIONS,
+      },
+    ]);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormError("");
+    
+    const name = formName.trim();
+    const email = formEmail.trim();
+    
+    if (name.length < 2) {
+      setFormError("Please enter your full name.");
+      return;
+    }
+    if (!email.includes("@") || email.length < 5) {
+      setFormError("Please enter a valid email address.");
+      return;
+    }
+    
+    completeIdentification(name, email);
+  };
 
   const handleChoice = (choice: string) => {
     const cleanChoice = choice.trim();
@@ -334,7 +416,7 @@ export function ChatBot() {
 
       const matchedFaq = findBestFaqMatch(cleanChoice);
       if (matchedFaq && !shouldCancelFlow(cleanChoice)) {
-        let reply = matchedFaq.answer;
+        let reply = matchedFaq.answer || "";
         if (
           matchedFaq.sectionTitle.includes("LICENSES") || 
           matchedFaq.sectionTitle.includes("MEDICO-LEGAL")
@@ -344,13 +426,11 @@ export function ChatBot() {
 
         setTimeout(() => {
           setIsTyping(false);
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "bot",
-              text: `${reply}\n\n---\n\n*Continuing your request for **${flow.flowKey}**:*\n\n${getStepQuestion(flow.flowKey, currentStepField)}`,
-            },
-          ]);
+          const botMsg: Msg = {
+            role: "bot",
+            text: `${reply}\n\n---\n\n*Continuing your request for **${flow.flowKey}**:*\n\n${getStepQuestion(flow.flowKey, currentStepField)}`,
+          };
+          setMessages((prev) => [...prev, botMsg]);
         }, 800);
         return;
       }
@@ -398,11 +478,12 @@ export function ChatBot() {
 
         setTimeout(() => {
           setIsTyping(false);
+          const nameTag = user?.name ? `**${user.name}**, ` : "";
           setMessages((prev) => [
             ...prev,
             {
               role: "bot",
-              text: `${activeFlow.successMessage}\n\n**Captured Details:**\n${Object.entries(nextData)
+              text: `${nameTag}${activeFlow.successMessage}\n\n**Captured Details:**\n${Object.entries(nextData)
                 .map(([k, v]) => `• ${k}: ${v}`)
                 .join("\n")}`,
               options: ["Back to main menu", "Talk to a human"],
@@ -417,20 +498,25 @@ export function ChatBot() {
     processUserText(cleanChoice);
   };
 
+  const personalizeText = (text: string): string => {
+    if (user) {
+      return text.replace(/\b(Hello|Hi|Hey|Greetings)\b/g, `$1 ${user.name}`);
+    }
+    return text;
+  };
+
   const processUserText = (text: string) => {
     const cleanText = text.trim();
 
     if (cleanText.toLowerCase() === "talk to a human") {
       setTimeout(() => {
         setIsTyping(false);
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "bot",
-            text: `Sure! You can reach us directly at **contact@amretrihealthcare.com** or call us at **+91 98862 00349**.\n\nYou can also request a call back by typing "call me" here.`,
-            options: ["Back to main menu"],
-          },
-        ]);
+        const botMsg: Msg = {
+          role: "bot",
+          text: `Sure${user ? `, ${user.name}` : ""}! You can reach us directly at **contact@amretrihealthcare.com** or call us at **+91 98862 00349**.\n\nYou can also request a call back by typing "call me" here.`,
+          options: ["Back to main menu"],
+        };
+        setMessages((prev) => [...prev, botMsg]);
       }, 800);
       return;
     }
@@ -438,14 +524,12 @@ export function ChatBot() {
     if (cleanText.toLowerCase() === "back to main menu" || cleanText.toLowerCase() === "back") {
       setTimeout(() => {
         setIsTyping(false);
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "bot",
-            text: `How else can I help you today? Please choose one of our core options:`,
-            options: PRIMARY_OPTIONS,
-          },
-        ]);
+        const botMsg: Msg = {
+          role: "bot",
+          text: personalizeText(`How else can I help you today, ${user ? user.name : ""}? Please choose one of our core options:`),
+          options: PRIMARY_OPTIONS,
+        };
+        setMessages((prev) => [...prev, botMsg]);
       }, 800);
       return;
     }
@@ -498,26 +582,23 @@ export function ChatBot() {
     if (exactMenuOption) {
       handleMenuOptionRedirect(exactMenuOption);
       return;
-    }
-
-    if (/^(hi|hello|hey|greetings|good morning|good afternoon|good evening|welcome)/i.test(cleanText)) {
-      setTimeout(() => {
-        setIsTyping(false);
-        setMessages((prev) => [
-          ...prev,
-          {
+    }      if (/^(hi|hello|hey|greetings|good morning|good afternoon|good evening|welcome)/i.test(cleanText)) {
+        setTimeout(() => {
+          setIsTyping(false);
+          const userName = user?.name || "";
+          const msg: Msg = {
             role: "bot",
-            text: WELCOME_MSG,
+            text: getWelcomeMessage(userName),
             options: PRIMARY_OPTIONS,
-          },
-        ]);
-      }, 800);
-      return;
-    }
+          };
+          setMessages((prev) => [...prev, msg]);
+        }, 800);
+        return;
+      }
 
     const matchedFaq = findBestFaqMatch(cleanText);
     if (matchedFaq) {
-      let reply = matchedFaq.answer;
+      let reply = matchedFaq.answer || "";
       
       if (
         matchedFaq.sectionTitle.includes("LICENSES") || 
@@ -528,26 +609,22 @@ export function ChatBot() {
 
       setTimeout(() => {
         setIsTyping(false);
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "bot",
-            text: reply,
-            options: ["Back to main menu", "Talk to a human"],
-          },
-        ]);
+        const botMsg: Msg = {
+          role: "bot",
+          text: reply,
+          options: ["Back to main menu", "Talk to a human"],
+        };
+        setMessages((prev) => [...prev, botMsg]);
       }, 800);
     } else {
       setTimeout(() => {
         setIsTyping(false);
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "bot",
-            text: `I couldn't find an exact match for that. \n\nPlease select one of the core options below, or choose "Talk to a human" to contact our operations team directly.`,
-            options: PRIMARY_OPTIONS,
-          },
-        ]);
+        const botMsg: Msg = {
+          role: "bot",
+          text: `I couldn't find an exact match for that. \n\nPlease select one of the core options below, or choose "Talk to a human" to contact our operations team directly.`,
+          options: PRIMARY_OPTIONS,
+        };
+        setMessages((prev) => [...prev, botMsg]);
       }, 800);
     }
   };
@@ -569,14 +646,12 @@ export function ChatBot() {
       if (match) {
         setTimeout(() => {
           setIsTyping(false);
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "bot",
-              text: match.answer,
-              options: ["Back to main menu", "Talk to a human"],
-            },
-          ]);
+          const botMsg: Msg = {
+            role: "bot",
+            text: match.answer || "",
+            options: ["Back to main menu", "Talk to a human"],
+          };
+          setMessages((prev) => [...prev, botMsg]);
         }, 800);
         return;
       }
@@ -667,10 +742,46 @@ export function ChatBot() {
             </div>
           </div>
 
+          {/* ID Form for new users */}
+          {showForm && (
+            <div className="p-4 border-b border-border bg-white">
+              <div className="text-xs font-semibold text-ink mb-3">
+                👋 Welcome! Please enter your details to begin:
+              </div>
+              <form onSubmit={handleFormSubmit} className="space-y-2.5">
+                <input
+                  type="text"
+                  value={formName}
+                  onChange={(e) => setFormName(e.target.value)}
+                  placeholder="Your Name *"
+                  maxLength={100}
+                  className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-sm outline-none focus:border-brand focus:ring-1 focus:ring-brand/20"
+                />
+                <input
+                  type="email"
+                  value={formEmail}
+                  onChange={(e) => setFormEmail(e.target.value)}
+                  placeholder="Your Email *"
+                  maxLength={255}
+                  className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-sm outline-none focus:border-brand focus:ring-1 focus:ring-brand/20"
+                />
+                {formError && (
+                  <p className="text-xs text-red-500">{formError}</p>
+                )}
+                <button
+                  type="submit"
+                  className="w-full rounded-xl bg-brand py-2.5 text-sm font-bold text-white transition hover:bg-brand-deep"
+                >
+                  Start Chat
+                </button>
+              </form>
+            </div>
+          )}
+
           {/* Messages */}
           <div 
             data-lenis-prevent 
-            className="flex-1 space-y-3 overflow-y-auto bg-secondary/40 p-4"
+            className={`flex-1 space-y-3 overflow-y-auto bg-secondary/40 p-4 ${showForm ? "" : ""}`}
           >
             {messages.map((m, i) => (
               <div key={i} className={`flex flex-col ${m.role === "user" ? "items-end" : "items-start"}`}>
@@ -728,8 +839,9 @@ export function ChatBot() {
             <div ref={endRef} />
           </div>
 
-          {/* Composer */}
-          <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-border bg-card p-3">
+          {/* Composer — hidden during identification phase */}
+          {!showForm && (
+            <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-border bg-card p-3">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -745,6 +857,7 @@ export function ChatBot() {
               <Send className="h-4 w-4" />
             </button>
           </form>
+          )}
         </div>
       )}
     </>

@@ -20,9 +20,53 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Amretri Healthcare — Pharmacy, Lab & Radiology Management" },
       { property: "og:description", content: "We rebuild hospital departments into high-performance, profit-driven systems. Pan-India operations since 2009." },
     ],
+    links: [
+      { rel: "canonical", href: "https://amretrihealthcare.com" },
+    ],
   }),
   component: Index,
 });
+
+const homepageSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": "https://amretrihealthcare.com#organization",
+    "name": "Amretri Healthcare",
+    "description": "India's trusted hospital pharmacy operations partner providing pharmacy acquisition, staffing, procurement, inventory, compliance, and consulting services since 2009.",
+    "url": "https://amretrihealthcare.com",
+    "telephone": "+91-8585002020",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Khasra No. 43/2, Gali No-10, Indraprastha Colony, Burari",
+      "addressLocality": "New Delhi",
+      "addressCountry": "IN"
+    },
+    "areaServed": { "@type": "Country", "name": "India" },
+    "foundingDate": "2009",
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://amretrihealthcare.com#website",
+    "url": "https://amretrihealthcare.com",
+    "name": "Amretri Healthcare",
+    "publisher": { "@id": "https://amretrihealthcare.com#organization" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://amretrihealthcare.com#faq",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Pharmacy Management?", "acceptedAnswer": { "@type": "Answer", "text": "Ensuring the right medicines are available, compliant, cost-effective, and dispensed safely at all times." } },
+      { "@type": "Question", "name": "What is the role of Amretri in Pharmacy Management?", "acceptedAnswer": { "@type": "Answer", "text": "Amretri manages hospital pharmacies end-to-end improving efficiency, compliance, and profitability." } },
+      { "@type": "Question", "name": "Is outsourced pharmacy and lab management profitable?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It improves margins, reduces leakages, and ensures consistent quality — typically a 5-30% margin uplift." } },
+      { "@type": "Question", "name": "Do I lose control if I outsource?", "acceptedAnswer": { "@type": "Answer", "text": "No. You retain full ownership, visibility, and decision-making control. Amretri operates inside your governance." } },
+      { "@type": "Question", "name": "How long until we go live?", "acceptedAnswer": { "@type": "Answer", "text": "Typically 15-30 days from onboarding, depending on scope and readiness." } }
+    ]
+  }
+];
 
 function Index() {
   useEffect(() => {
@@ -44,6 +88,9 @@ function Index() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      {homepageSchemas.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
       <Navbar />
       <Hero />
       <Solutions />

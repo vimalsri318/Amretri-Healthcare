@@ -21,6 +21,9 @@ export const Route = createFileRoute("/bulk-medicine-procurement-for-hospitals")
       { property: "og:description", content: "Get better purchase rates and reduce your hospital's procurement costs with our bulk medicine supply network." },
       { property: "og:image", content: heroImg },
     ],
+    links: [
+      { rel: "canonical", href: "https://amretrihealthcare.com/services/bulk-medicine-procurement" },
+    ],
   }),
   component: BulkProcurementPage,
 });

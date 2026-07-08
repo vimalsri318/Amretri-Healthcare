@@ -5,6 +5,7 @@ import hospital from "@/assets/serve-hospital.jpg";
 import rural from "@/assets/serve-rural.jpg";
 import government from "@/assets/serve-government.jpg";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 
 const partners = [
@@ -30,9 +31,9 @@ export function WhoWeServe() {
               seamless, compliant, profitable pharmacy, pathology lab and radiology operations.
             </p>
           </div>
-          <a href="/#contact" className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange hover:shadow-lg hover:shadow-orange/20 hover-glow">
+          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange hover:shadow-lg hover:shadow-orange/20 hover-glow">
             Partner With Us <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
+          </Link>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

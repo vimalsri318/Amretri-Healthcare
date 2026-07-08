@@ -21,6 +21,9 @@ export const Route = createFileRoute("/pharmacist-supply-staffing-services")({
       { property: "og:description", content: "Get reliable pharmacist staffing for your hospital. We handle recruitment, verification, training, and shift management." },
       { property: "og:image", content: heroImg },
     ],
+    links: [
+      { rel: "canonical", href: "https://amretrihealthcare.com/services/pharmacist-supply-staffing" },
+    ],
   }),
   component: PharmacistStaffingPage,
 });

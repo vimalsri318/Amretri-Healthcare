@@ -56,7 +56,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 animate-fade-up">
             <Link
-              to="/hospital-pharmacy-acquisition-management-services"
+              to="/services/hospital-pharmacy-acquisition-management"
               className="group inline-flex items-center gap-4 text-base font-semibold text-brand"
             >
               <span className="border-b border-brand/50 pb-1 transition-colors group-hover:border-brand">Request Pharmacy Review</span>
@@ -65,14 +65,14 @@ export function Hero() {
               </span>
             </Link>
             <Link
-              to="/pharmacist-supply-staffing-services"
+              to="/services/pharmacist-supply-staffing"
               className="group inline-flex items-center gap-4 text-sm font-semibold text-ink-soft hover:text-brand transition-colors"
             >
               <span>Hire Pharmacists</span>
               <ArrowUpRight className="h-4 w-4 opacity-50 group-hover:opacity-100" />
             </Link>
             <Link
-              to="/bulk-medicine-procurement-for-hospitals"
+              to="/services/bulk-medicine-procurement"
               className="group inline-flex items-center gap-4 text-sm font-semibold text-ink-soft hover:text-brand transition-colors"
             >
               <span>Improve Purchase Rates</span>

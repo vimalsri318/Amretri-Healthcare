@@ -17,6 +17,9 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Amretri Healthcare" },
       { property: "og:description", content: "Get in touch with our team for pharmacy management and procurement services." },
     ],
+    links: [
+      { rel: "canonical", href: "https://amretrihealthcare.com/contact" },
+    ],
   }),
   component: ContactPage,
 });
@@ -92,6 +95,25 @@ function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": "https://amretrihealthcare.com/contact",
+        "name": "Contact Amretri Healthcare",
+        "description": "Contact Amretri Healthcare for hospital pharmacy management, pharmacist staffing, and bulk medicine procurement inquiries.",
+        "url": "https://amretrihealthcare.com/contact",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Amretri Healthcare",
+          "telephone": "+91-8585002020",
+          "email": "info@amretrihealthcare.com",
+          "address": { "@type": "PostalAddress", "streetAddress": "Khasra No. 43/2, Gali No-10, Indraprastha Colony, Burari", "addressLocality": "New Delhi", "addressCountry": "IN" },
+          "contactPoint": [
+            { "@type": "ContactPoint", "telephone": "+91-9886200349", "contactType": "sales", "availableLanguage": ["English", "Hindi"] },
+            { "@type": "ContactPoint", "telephone": "+91-8585002020", "contactType": "customer service", "availableLanguage": ["English", "Hindi"] }
+          ]
+        }
+      }) }} />
       <Navbar />
 
       <main className="flex-grow pt-32 pb-24">

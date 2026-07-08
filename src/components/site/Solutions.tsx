@@ -1,4 +1,5 @@
-import { Pill, FlaskConical, ScanLine, ArrowUpRight, Check } from "lucide-react";
+import { Pill, FlaskConical, ScanLine, ArrowUpRight, Check, TrendingUp, ShieldCheck, BarChart3 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 
 const solutions = [
@@ -7,7 +8,7 @@ const solutions = [
     title: "Pharmacy Acquisition & Management",
     tagline: "Outsource or hand over your hospital pharmacy operations.",
     margin: "High ROI",
-    link: "/hospital-pharmacy-acquisition-management-services",
+    slug: "hospital-pharmacy-acquisition-management",
     points: [
       "Zero operational headache",
       "Guaranteed compliance & audits",
@@ -19,7 +20,7 @@ const solutions = [
     title: "Pharmacist Supply & Staffing",
     tagline: "Get trained, verified, and reliable pharmacists for your hospital.",
     margin: "Reliable",
-    link: "/pharmacist-supply-staffing-services",
+    slug: "pharmacist-supply-staffing",
     points: [
       "Pre-screened professionals",
       "Emergency replacements",
@@ -31,7 +32,7 @@ const solutions = [
     title: "Bulk Medicine Procurement",
     tagline: "Get better purchase rates and reduce procurement costs.",
     margin: "Savings",
-    link: "/bulk-medicine-procurement-for-hospitals",
+    slug: "bulk-medicine-procurement",
     points: [
       "Direct manufacturer rates",
       "Optimized vendor negotiation",
@@ -39,11 +40,11 @@ const solutions = [
     ],
   },
   {
-    icon: Pill, // reuse or import others
+    icon: BarChart3,
     title: "Inventory & Stock Control",
     tagline: "Stop losing money to expired medicines and dead stock.",
     margin: "Control",
-    link: "/#contact", // Phase 2
+    slug: "inventory-stock-control",
     points: [
       "FEFO tracking",
       "ABC & VED analysis",
@@ -51,11 +52,11 @@ const solutions = [
     ],
   },
   {
-    icon: ScanLine,
+    icon: ShieldCheck,
     title: "Pharmacy Compliance & Audit",
     tagline: "Stay 100% compliant with drug licenses and NABH readiness.",
     margin: "Secure",
-    link: "/#contact", // Phase 2
+    slug: "compliance-audit",
     points: [
       "Narcotic registers",
       "Cold chain maintenance",
@@ -63,11 +64,11 @@ const solutions = [
     ],
   },
   {
-    icon: FlaskConical,
+    icon: TrendingUp,
     title: "Consulting & Profit Improvement",
     tagline: "Improve your in-house margins without outsourcing.",
     margin: "Growth",
-    link: "/#contact", // Phase 2
+    slug: "consulting-profit-improvement",
     points: [
       "Margin leakage reduction",
       "Profitability analysis",
@@ -92,42 +93,44 @@ export function Solutions() {
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {solutions.map((s, i) => {
             const Icon = s.icon;
-            const href = "link" in s ? s.link : "/#contact";
+
             return (
-              <Reveal
-                key={s.title}
-                as="article"
-                delay={i * 120}
-                variant={i === 0 ? "left" : i === 1 ? "scale" : "right"}
-                className="group relative flex flex-col rounded-3xl border border-border bg-card p-8 hover-lift hover:border-brand"
+              <Link
+                to={`/services/${s.slug}` as any}
+                className="block"
               >
-                <div className="flex items-center justify-between">
-                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-orange">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <span className="rounded-full bg-orange/10 px-3 py-1 text-xs font-bold text-orange">
-                    {s.margin}
-                  </span>
-                </div>
-                <h3 className="mt-6 text-2xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-ink-soft">{s.tagline}</p>
-
-                <ul className="mt-6 space-y-3">
-                  {s.points.map((p) => (
-                    <li key={p} className="flex items-start gap-3 text-sm text-ink">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={href}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-all duration-300 group-hover:text-orange group-hover:gap-3"
+                <Reveal
+                  key={s.title}
+                  as="article"
+                  delay={i * 120}
+                  variant={i === 0 ? "left" : i === 1 ? "scale" : "right"}
+                  className={`group flex flex-col rounded-3xl border border-border p-8 hover-lift hover:border-brand h-full cursor-pointer ${i === 0 ? 'bg-gradient-to-b from-brand/15 from-0% via-brand/[0.04] via-50% to-white to-100%' : 'bg-card'}`}
                 >
-                  Know More <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </a>
-              </Reveal>
+                  <div className="flex items-center justify-between">
+                    <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-orange">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <span className="rounded-full bg-orange/10 px-3 py-1 text-xs font-bold text-orange">
+                      {s.margin}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-2xl font-bold">{s.title}</h3>
+                  <p className="mt-2 text-sm text-ink-soft">{s.tagline}</p>
+
+                  <ul className="mt-6 space-y-3">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-start gap-3 text-sm text-ink">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-all duration-300 group-hover:text-orange group-hover:gap-3">
+                    Know More <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </span>
+                </Reveal>
+              </Link>
             );
           })}
         </div>

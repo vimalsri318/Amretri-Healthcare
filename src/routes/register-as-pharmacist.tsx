@@ -21,6 +21,9 @@ export const Route = createFileRoute("/register-as-pharmacist")({
       { property: "og:description", content: "Looking for a secure career in hospital pharmacy? Register with Amretri for placement in top hospitals." },
       { property: "og:image", content: heroImg },
     ],
+    links: [
+      { rel: "canonical", href: "https://amretrihealthcare.com/register-as-pharmacist" },
+    ],
   }),
   component: RegisterPharmacistPage,
 });
@@ -101,6 +104,20 @@ function RegisterPharmacistPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Hospital Pharmacist",
+        "description": "Amretri Healthcare is hiring qualified D.Pharma, B.Pharma, and M.Pharma professionals for hospital pharmacy roles across India.",
+        "hiringOrganization": { "@type": "Organization", "name": "Amretri Healthcare", "url": "https://amretrihealthcare.com" },
+        "employmentType": ["FULL_TIME", "PART_TIME", "CONTRACTOR"],
+        "workHours": "Flexible shifts available",
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "IN" } },
+        "qualifications": "D.Pharma, B.Pharma, or M.Pharma with valid pharmacy council registration",
+        "skills": "Medicine dispensing, inventory management, patient counseling, regulatory compliance",
+        "datePosted": "2026-07-08",
+        "validThrough": "2026-12-31"
+      }) }} />
       <Navbar />
 
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">

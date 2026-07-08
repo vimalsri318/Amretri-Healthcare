@@ -23,6 +23,9 @@ export const Route = createFileRoute("/hospital-pharmacy-acquisition-management-
       { property: "og:description", content: "Professional Pharmacy Takeover, Operations and Management for Hospitals. Boost margins by 5-30% with better procurement, inventory control, and trained pharmacists." },
       { property: "og:image", content: heroImg },
     ],
+    links: [
+      { rel: "canonical", href: "https://amretrihealthcare.com/services/hospital-pharmacy-acquisition-management" },
+    ],
   }),
   component: PharmacyServicesPage,
 });
