@@ -1,0 +1,344 @@
+{
+  "name": "AMRI",
+  "fullName": "AMRI – Amretri Healthcare Assistant",
+  "positioning": "Ask AMRI anything about hospital pharmacy setup, pharmacy takeover, pharmacist staffing, medicine procurement, diagnostics setup, licenses, compliance, equipment, inventory, audits and medico-legal pharmacy support.",
+  "welcomeMessage": "Hello, I am AMRI, your Amretri Healthcare Assistant.\nI can help you with hospital pharmacy setup, pharmacy takeover, pharmacist requirements, bulk medicine procurement, pharmacy licenses, diagnostic center setup, equipment planning, compliance, audits, inventory control and medico-legal pharmacy guidance.\nPlease select what you need help with, and I will guide you with the basics. For detailed support, I can connect you with the Amretri team.",
+  "menuOptions": [
+    "I want Amretri to take over or manage my hospital pharmacy",
+    "I need pharmacists or pharmacy staff",
+    "I want better medicine purchase rates",
+    "I want to set up a new pharmacy",
+    "I want to set up a diagnostic center",
+    "I need help with licenses and compliance",
+    "I need pharmacy audit or stock audit",
+    "I have expiry, dead stock or inventory problems",
+    "I need equipment planning for pharmacy or diagnostics",
+    "I need medico-legal or documentation guidance",
+    "I want to discuss a hospital, PPP or institutional project",
+    "I want Amretri team to call me"
+  ],
+  "sections": [
+    {
+      "title": "SECTION 1: HOSPITAL PHARMACY ACQUISITION & MANAGEMENT",
+      "faqs": [
+        {
+          "question": "Can Amretri take over my hospital pharmacy?",
+          "answer": "Yes. Amretri Healthcare can discuss hospital pharmacy takeover, acquisition, management or operation models depending on your hospital size, pharmacy sales, stock value, location and current pharmacy challenges.\nWe can support hospitals with pharmacy operations, procurement, pharmacist deployment, inventory control, expiry monitoring, compliance support and management reporting.\nTo assess your case, please share your hospital name, city, number of beds and approximate monthly pharmacy sales."
+        },
+        {
+          "question": "My hospital pharmacy is profitable, but I am tired of managing it daily. Can Amretri help?",
+          "answer": "Yes. Many hospital owners face this problem.\nA pharmacy may show good sales, but daily issues like purchase, stock, expiry, staff shortage, vendor calls, billing disputes, medicine availability and compliance can become a constant headache.\nAmretri can professionally manage or operate your pharmacy so that the hospital management can focus on clinical services, patient experience and hospital growth."
+        },
+        {
+          "question": "What models does Amretri offer for hospital pharmacy takeover?",
+          "answer": "Amretri can discuss different models depending on the hospital’s requirement.\nPossible models include:\nFull pharmacy acquisitionPharmacy management contractRevenue-sharing modelFixed monthly payout modelMinimum guarantee modelProcurement support modelPharmacist supply and supervision modelHybrid operating model\nThe final model depends on your hospital’s pharmacy sales, inventory value, patient flow, location and commercial expectations."
+        },
+        {
+          "question": "What information is needed before Amretri gives a pharmacy takeover proposal?",
+          "answer": "To prepare a practical proposal, Amretri usually needs:\nHospital nameCity and locationNumber of bedsMonthly OPD and IPD volumeAverage monthly pharmacy salesCurrent inventory valueCurrent pharmacy staff strengthCurrent pharmacy modelMajor problems facedApproximate expiry or dead stock valueCurrent purchase and vendor process\nOnce these details are received, Amretri can schedule a discussion."
+        },
+        {
+          "question": "Can Amretri manage pharmacy without buying it?",
+          "answer": "Yes. If you do not want full pharmacy acquisition, Amretri can still support you through a pharmacy management, consulting, procurement, staffing or audit model.\nMany hospitals first start with audit, procurement support or pharmacist staffing before moving to full pharmacy outsourcing."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 2: PHARMACIST SUPPLY & STAFFING",
+      "faqs": [
+        {
+          "question": "Can Amretri provide pharmacists for hospitals?",
+          "answer": "Yes. Amretri Healthcare provides pharmacist supply and staffing support for hospitals, clinics, pharmacies and healthcare institutions.\nWe can help with registered pharmacists, pharmacy supervisors, pharmacy managers, replacement pharmacists and contract pharmacy manpower depending on location and availability."
+        },
+        {
+          "question": "I need a pharmacist urgently. Can Amretri help?",
+          "answer": "Yes. Please share your city, organization name, number of pharmacists required, shift timing and expected joining date.\nAMRI will forward your requirement to the Amretri team for quick review."
+        },
+        {
+          "question": "Can Amretri provide pharmacists for night shift?",
+          "answer": "Yes. Amretri can help with day shift, night shift or rotational shift pharmacist requirements depending on city, availability and staffing terms.\nPlease share your location and shift requirement."
+        },
+        {
+          "question": "Can Amretri provide pharmacy supervisors also?",
+          "answer": "Yes. Amretri can help hospitals and pharmacies with pharmacy supervisors and pharmacy managers.\nA pharmacy supervisor can monitor staff discipline, stock movement, expiry, billing coordination, purchase follow-up, daily reports and compliance documentation."
+        },
+        {
+          "question": "Can Amretri replace a pharmacist if the current pharmacist leaves?",
+          "answer": "Yes. Replacement support can be discussed as part of the staffing model.\nThis is one of the biggest advantages of working with a structured pharmacist staffing partner. Your pharmacy should not stop functioning because one pharmacist resigns or goes on leave."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 3: BULK MEDICINE PROCUREMENT",
+      "faqs": [
+        {
+          "question": "My hospital pharmacy does not get good medicine purchase rates. Can Amretri help?",
+          "answer": "Yes. Single hospital pharmacies often lose buying power because they purchase in smaller quantities and depend heavily on local vendors.\nAmretri buys and manages pharmacy procurement at scale. This helps hospitals explore better purchase discipline, better vendor negotiation and improved procurement planning.\nPlease share your average monthly medicine purchase value and city."
+        },
+        {
+          "question": "Can Amretri help without taking over my pharmacy?",
+          "answer": "Yes. If you only need better procurement rates or purchase support, Amretri can discuss a procurement support model separately.\nYou do not need to hand over the entire pharmacy immediately."
+        },
+        {
+          "question": "What is a purchase rate review?",
+          "answer": "A purchase rate review compares your current medicine purchase rates with better available procurement options.\nIt helps identify whether your hospital pharmacy is losing margin due to weak purchase negotiation, emergency purchase, local vendor dependency or lack of bulk buying advantage."
+        },
+        {
+          "question": "Can Amretri help reduce emergency purchase?",
+          "answer": "Yes. Emergency purchase usually happens because of poor stock planning, weak reorder levels or delayed procurement.\nAmretri can help improve stock planning, fast-moving item availability, vendor discipline and purchase scheduling."
+        },
+        {
+          "question": "Can Amretri supply medicines directly?",
+          "answer": "Amretri can discuss procurement support and medicine supply models based on your hospital location, license requirements, product category, volume and applicable regulations.\nPlease share your city, monthly purchase value and type of medicines required."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 4: NEW PHARMACY SETUP",
+      "faqs": [
+        {
+          "question": "I want to set up a new hospital pharmacy. Can Amretri guide me?",
+          "answer": "Yes. Amretri can guide hospitals, clinics and healthcare entrepreneurs in setting up a pharmacy.\nWe can help with pharmacy layout planning, license guidance, staffing, stock planning, vendor planning, inventory system, billing workflow, compliance checklist and operating SOPs."
+        },
+        {
+          "question": "What is needed to start a hospital pharmacy?",
+          "answer": "A hospital pharmacy usually needs:\nSuitable pharmacy spaceDrug license processRegistered pharmacistStorage racks and refrigeratorBilling and inventory systemVendor and procurement planningMedicine list and stock planningTemperature monitoringExpiry tracking processRegisters and documentationSOPs for dispensing, purchase, return and stock control\nAmretri can guide you through these steps."
+        },
+        {
+          "question": "Can Amretri help with pharmacy layout?",
+          "answer": "Yes. Pharmacy layout is important for patient flow, dispensing speed, stock visibility, storage safety and compliance.\nAmretri can help plan counter placement, storage zones, refrigerator placement, fast-moving medicine racks, controlled medicine storage, billing desk and back-store area."
+        },
+        {
+          "question": "Can Amretri help prepare the initial medicine stock list?",
+          "answer": "Yes. The initial pharmacy stock list should be based on hospital specialty, OPD volume, IPD services, ICU, OT, emergency, doctor preference and expected patient profile.\nAmretri can help prepare a practical opening stock list so that the pharmacy does not overstock unnecessary medicines or miss critical medicines."
+        },
+        {
+          "question": "Can Amretri help set up pharmacy SOPs?",
+          "answer": "Yes. Amretri can help create practical pharmacy SOPs for purchase, GRN, dispensing, returns, expiry, cold chain, narcotics, high-alert medicines, LASA drugs, stock audit, billing coordination and daily reporting."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 5: DIAGNOSTIC CENTER SETUP",
+      "faqs": [
+        {
+          "question": "I want to set up a diagnostic center. Can Amretri guide me?",
+          "answer": "Yes. Amretri can guide you with basic planning for diagnostic center setup, including service selection, space planning, equipment requirement, staff planning, license guidance, workflow, reporting process and vendor coordination.\nFor detailed planning, AMRI can connect you with the Amretri team."
+        },
+        {
+          "question": "What services should I start in a new diagnostic center?",
+          "answer": "This depends on your location, patient demand, doctor network, investment budget and competition.\nCommon diagnostic center services may include:\nPathology sample collectionBasic lab testsECGX-rayUltrasound2D EchoTMTPFTHealth checkupsHome sample collection\nThe right mix should be decided after market and feasibility assessment."
+        },
+        {
+          "question": "Can Amretri help with diagnostic center equipment planning?",
+          "answer": "Yes. Amretri can help you prepare a basic equipment requirement list based on the services you want to offer.\nFor example, a pathology setup, radiology setup and cardiac diagnostics setup will all require different equipment, space, staff and compliance planning."
+        },
+        {
+          "question": "Can Amretri help with lab staff requirements?",
+          "answer": "Yes. Amretri can guide you on manpower required for lab operations such as lab technicians, phlebotomists, reception, billing, sample collection staff, reporting coordination and quality supervision."
+        },
+        {
+          "question": "Can Amretri help with diagnostic center workflow?",
+          "answer": "Yes. Diagnostic center workflow includes patient registration, sample collection, billing, test processing, report generation, doctor coordination, report delivery, TAT monitoring and complaint handling.\nAmretri can help you design a practical workflow."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 6: LICENSES & COMPLIANCE",
+      "faqs": [
+        {
+          "question": "Can Amretri help with pharmacy license guidance?",
+          "answer": "Yes. Amretri can provide basic guidance and connect you with the right support for pharmacy license requirements.\nLicense requirements may depend on your state, pharmacy type, premises, pharmacist availability and applicable laws."
+        },
+        {
+          "question": "What licenses are generally needed for a pharmacy?",
+          "answer": "A pharmacy generally requires a drug license and qualified registered pharmacist support. Other requirements may depend on the type of pharmacy, state regulations, premises, storage condition and business structure.\nAMRI can explain the basics, and the Amretri team can guide you further."
+        },
+        {
+          "question": "Can Amretri help with diagnostic center licenses?",
+          "answer": "Yes. Amretri can guide you on the basic licenses and registrations usually required for diagnostic services.\nRequirements may vary depending on whether you are starting pathology, X-ray, ultrasound, CT, MRI or other services."
+        },
+        {
+          "question": "Can Amretri help with AERB-related guidance?",
+          "answer": "Yes. For radiology services such as X-ray, CT or other radiation-based equipment, regulatory requirements may apply.\nAmretri can provide basic guidance and connect you with appropriate experts for detailed compliance support."
+        },
+        {
+          "question": "Can Amretri help with NABH pharmacy compliance?",
+          "answer": "Yes. Amretri can support hospitals with pharmacy SOPs, documentation, expiry monitoring, cold chain records, LASA and high-alert medicine control, narcotic documentation, audit checklists and internal pharmacy compliance readiness."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 7: PHARMACY AUDIT & INVENTORY CONTROL",
+      "faqs": [
+        {
+          "question": "Can Amretri audit my hospital pharmacy?",
+          "answer": "Yes. Amretri can conduct or support a pharmacy audit covering stock, purchase, expiry, dead stock, billing process, manpower, compliance, vendor process and reporting.\nA pharmacy audit helps hospital owners understand where money, control and compliance are getting affected."
+        },
+        {
+          "question": "What does a pharmacy stock audit include?",
+          "answer": "A pharmacy stock audit may include:\nPhysical stock verificationSystem stock comparisonExpired stock checkNear-expiry medicine checkSlow-moving stock reviewFast-moving item availabilityHigh-value stock reviewDead stock identificationReturn and damage stock reviewStock mismatch report"
+        },
+        {
+          "question": "My pharmacy has too much dead stock. Can Amretri help?",
+          "answer": "Yes. Dead stock blocks money and reduces pharmacy profitability.\nAmretri can help identify slow-moving and non-moving items, review purchase history, suggest correction plans and improve future stock planning."
+        },
+        {
+          "question": "How can expiry loss be reduced?",
+          "answer": "Expiry loss can be reduced through:\nFEFO stock movementNear-expiry trackingMonthly expiry reviewControlled purchase planningFast-moving and slow-moving analysisVendor return follow-upBetter stock rotationProper storage and displayResponsible staff supervision\nAmretri can help implement these controls."
+        },
+        {
+          "question": "Can Amretri help create daily pharmacy MIS?",
+          "answer": "Yes. Daily pharmacy MIS can include sales, purchase, returns, cash/credit sales, stock value, expiry status, high-value stock, fast-moving items, pending indents, vendor issues and staff performance.\nThis helps owners and administrators monitor pharmacy performance properly."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 8: EQUIPMENT REQUIREMENTS",
+      "faqs": [
+        {
+          "question": "What equipment is needed for a hospital pharmacy?",
+          "answer": "A hospital pharmacy may need:\nMedicine racksBilling counterComputer and printerBarcode scannerRefrigeratorTemperature monitorUPS or backup powerStorage cabinetsControlled medicine cabinetLabeling supportFire safety equipmentCCTVInventory software\nThe exact list depends on pharmacy size, expected volume and services."
+        },
+        {
+          "question": "Can Amretri help choose pharmacy software?",
+          "answer": "Yes. Amretri can guide you on the basic features required in pharmacy software.\nImportant features include inventory, batch number, expiry, purchase, sales, returns, GST, barcode, stock reports, reorder alerts, user access control and hospital billing integration."
+        },
+        {
+          "question": "What equipment is needed for a diagnostic center?",
+          "answer": "This depends on the services planned.\nA basic diagnostic center may need sample collection furniture, centrifuge, analyzer, refrigerator, microscope, computer, printer, barcode system and lab consumables.\nRadiology or cardiac diagnostics may need separate equipment such as X-ray, ultrasound, ECG, 2D Echo or TMT depending on the service plan and regulatory requirements."
+        },
+        {
+          "question": "Can Amretri help prepare an equipment budget?",
+          "answer": "Yes. Amretri can help prepare a basic equipment requirement and budget estimate based on your planned services, location, investment level and expected patient volume."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 9: MEDICO-LEGAL & DOCUMENTATION SUPPORT",
+      "faqs": [
+        {
+          "question": "Can Amretri help with medico-legal pharmacy documentation?",
+          "answer": "Yes. Amretri can provide basic guidance on pharmacy documentation and connect you with appropriate experts where detailed legal opinion is required.\nPharmacy documentation is important for patient safety, compliance, audits and medico-legal protection."
+        },
+        {
+          "question": "What pharmacy records should a hospital maintain?",
+          "answer": "A hospital pharmacy should maintain records related to purchase, sales, stock, expiry, returns, temperature, cold chain, narcotics or controlled medicines where applicable, high-alert medicines, LASA medicines, audit reports and staff responsibilities.\nThe exact records may depend on pharmacy type and applicable regulations."
+        },
+        {
+          "question": "Can Amretri help with SOPs and policies?",
+          "answer": "Yes. Amretri can help prepare practical pharmacy SOPs and policies for hospital use.\nThese may include dispensing SOP, purchase SOP, return SOP, expiry SOP, cold chain SOP, controlled medicine SOP, stock audit SOP, high-alert medicine SOP and daily reporting SOP."
+        },
+        {
+          "question": "Can Amretri help if there is a pharmacy-related patient complaint?",
+          "answer": "Yes. Amretri can help review the process gap behind the complaint and guide the hospital on corrective action.\nCommon pharmacy-related complaints include medicine non-availability, wrong billing, delay in dispensing, substitution confusion, lack of counselling, expired medicine concern or poor communication."
+        },
+        {
+          "question": "Can Amretri provide legal advice?",
+          "answer": "AMRI can provide basic operational and documentation guidance. For formal legal opinion, Amretri can connect you with appropriate medico-legal or regulatory experts."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 10: GOVERNMENT, PPP & INSTITUTIONAL PROJECTS",
+      "faqs": [
+        {
+          "question": "Can Amretri support government or PPP healthcare projects?",
+          "answer": "Yes. Amretri can support government, PPP and institutional healthcare projects with pharmacy planning, pharmacist manpower, medicine procurement support, inventory control, compliance reporting and operational structuring."
+        },
+        {
+          "question": "Can Amretri support multiple hospitals or pharmacy units?",
+          "answer": "Yes. Amretri can support hospital groups, multi-location pharmacies and institutional healthcare networks with centralized pharmacy control, pharmacist deployment, procurement planning, reporting and audit support."
+        },
+        {
+          "question": "Can Amretri help charitable or trust hospitals?",
+          "answer": "Yes. Charitable and trust hospitals often need affordable medicine availability, transparent procurement, controlled stock and compliance-ready documentation.\nAmretri can discuss suitable models based on the institution’s mission, patient profile and pharmacy volume."
+        }
+      ]
+    },
+    {
+      "title": "SECTION 11: STRONG CONVERSION QUESTIONS",
+      "faqs": [
+        {
+          "question": "My hospital pharmacy is running, but I do not know whether it is truly profitable. Can Amretri check?",
+          "answer": "Yes. Pharmacy sales alone do not prove profitability.\nAmretri can review purchase rates, margin, expiry, dead stock, discounts, billing leakage, stock value, vendor terms and staff productivity to understand the real pharmacy performance."
+        },
+        {
+          "question": "My pharmacy sales are good, but cash flow is poor. Why?",
+          "answer": "This can happen due to excess stock, dead stock, slow-moving medicines, expiry loss, high purchase rates, credit sales, poor return control, billing leakage or weak inventory discipline.\nAmretri can help review these areas and suggest corrective steps."
+        },
+        {
+          "question": "My pharmacy depends on one person. Is this risky?",
+          "answer": "Yes. If one person controls purchase, stock, billing, vendor coordination and reporting, the pharmacy becomes person-dependent and risky.\nAmretri can help create proper roles, reporting systems, SOPs and backup staffing."
+        },
+        {
+          "question": "I am opening a new hospital. When should I start pharmacy planning?",
+          "answer": "Pharmacy planning should start before hospital launch, not after launch.\nYou should plan license requirements, layout, pharmacist staffing, initial stock, software, vendor list, SOPs, billing process, compliance records and emergency medicine availability before opening.\nAmretri can help you plan this in advance."
+        },
+        {
+          "question": "Can I ask AMRI small pharmacy questions also?",
+          "answer": "Yes. You can ask AMRI about small or big pharmacy requirements, including stock planning, staffing, license basics, medicine procurement, expiry control, pharmacy setup, diagnostic setup, audit, compliance, equipment and documentation.\nFor detailed support, AMRI can forward your query to the Amretri team."
+        }
+      ]
+    }
+  ],
+  "leadCaptureFlows": {
+    "pharmacy takeover": {
+      "steps": [
+        "Hospital name",
+        "City",
+        "Number of beds",
+        "Monthly pharmacy sales",
+        "Current pharmacy model",
+        "Main problem",
+        "Name and contact number"
+      ],
+      "successMessage": "Thank you. I have captured your pharmacy takeover requirement. The Amretri team will review your details and contact you for a detailed discussion."
+    },
+    "pharmacist requirement": {
+      "steps": [
+        "Organization name",
+        "City",
+        "Number of pharmacists required",
+        "Shift requirement",
+        "Full-time or temporary",
+        "Expected joining timeline",
+        "Name and contact number"
+      ],
+      "successMessage": "Thank you. I have captured your pharmacist requirement. The Amretri team will contact you with the next steps."
+    },
+    "bulk procurement": {
+      "steps": [
+        "Hospital or pharmacy name",
+        "City",
+        "Average monthly medicine purchase",
+        "Main concern",
+        "Current vendor model",
+        "Name and contact number"
+      ],
+      "successMessage": "Thank you. I have captured your procurement support requirement. The Amretri team will review your purchase requirement and contact you."
+    },
+    "pharmacy or diagnostic setup": {
+      "steps": [
+        "Type of setup",
+        "City",
+        "Approximate investment budget",
+        "Expected launch timeline",
+        "Services planned",
+        "Name and contact number"
+      ],
+      "successMessage": "Thank you. I have captured your setup requirement. The Amretri team will contact you for a detailed planning discussion."
+    },
+    "license, compliance or medico-legal support": {
+      "steps": [
+        "Type of license or compliance issue",
+        "City and state",
+        "Existing setup or new setup",
+        "Urgency",
+        "Name and contact number"
+      ],
+      "successMessage": "Thank you. I have captured your compliance support request. The Amretri team will review it and connect you with the right guidance."
+    }
+  },
+  "safetyNote": "This is basic operational guidance. For final legal, regulatory or statutory decisions, Amretri can connect you with the appropriate expert or consultant after understanding your exact case."
+}
