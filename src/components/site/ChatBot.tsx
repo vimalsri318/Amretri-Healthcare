@@ -385,6 +385,22 @@ export function ChatBot() {
     ]);
   };
 
+  // Save full conversation transcript to Google Sheets
+  const saveConversation = (msgs: Msg[]) => {
+    if (!user) return;
+    const transcript = msgs
+      .filter((m) => m.text)
+      .map((m) => `[${m.role === "bot" ? "AMRI" : user.name}]: ${m.text.replace(/\*\*/g, "")}`)
+      .join("\n");
+    submitToGoogleSheets("inquiry", {
+      formSource: "Chatbot Conversation Log",
+      name: user.name,
+      email: user.email,
+      sessionTime: new Date().toLocaleString("en-IN"),
+      conversation: transcript,
+    });
+  };
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormError("");
@@ -484,9 +500,30 @@ export function ChatBot() {
         const encodedText = encodeURIComponent(waText);
         const waLink = `https://wa.me/919886200349?text=${encodedText}`;
 
+        // Submit the collected flow data to Google Sheets
+        submitToGoogleSheets("inquiry", {
+          formSource: `Chatbot Flow: ${flow.flowKey}`,
+          name: user?.name || "",
+          email: user?.email || "",
+          sessionTime: new Date().toLocaleString("en-IN"),
+          ...nextData,
+        });
+
         setTimeout(() => {
           setIsTyping(false);
           const nameTag = user?.name ? `**${user.name}**, ` : "";
+          const finalMessages: Msg[] = [
+            ...messages,
+            { role: "user", text: cleanChoice },
+            {
+              role: "bot",
+              text: `${nameTag}${activeFlow.successMessage}\n\n**Captured Details:**\n${Object.entries(nextData)
+                .map(([k, v]) => `• ${k}: ${v}`)
+                .join("\n")}`,
+              options: ["Back to main menu", "Talk to a human"],
+              waLink,
+            },
+          ];
           setMessages((prev) => [
             ...prev,
             {
@@ -498,6 +535,8 @@ export function ChatBot() {
               waLink,
             },
           ]);
+          // Save full conversation transcript
+          saveConversation(finalMessages);
         }, 800);
       }
       return;
@@ -705,7 +744,10 @@ export function ChatBot() {
         {/* Chatbot Button */}
         <button
           aria-label={open ? "Close chat" : "Open chat"}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            if (open && messages.length > 1) saveConversation(messages);
+            setOpen((v) => !v);
+          }}
           className="group relative grid h-14 w-14 place-items-center"
         >
           {!open && (
