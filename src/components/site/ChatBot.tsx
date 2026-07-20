@@ -272,7 +272,7 @@ function validateStepInput(field: string, input: string): string | null {
     return `"${clean}" is too generic. Could you please provide specific details?`;
   }
 
-  if (f.includes("city") || f.includes("beds") || f.includes("sales") || f.includes("setup") || f.includes("timeline") || f.includes("name")) {
+  if (f.includes("city") || f.includes("beds") || f.includes("sales") || f.includes("setup") || f.includes("timeline")) {
     if (isLikelyConversationalPhrase(clean)) {
       return "It looks like you are asking a question or typing a message. Please specify the requested information directly (e.g. just the name of your City/Hospital).";
     }
@@ -438,26 +438,7 @@ export function ChatBot() {
       const activeFlow = customFlows[flow.flowKey];
       const currentStepField = activeFlow.steps[flow.stepIndex];
 
-      const matchedFaq = findBestFaqMatch(cleanChoice);
-      if (matchedFaq && !shouldCancelFlow(cleanChoice)) {
-        let reply = matchedFaq.answer || "";
-        if (
-          matchedFaq.sectionTitle.includes("LICENSES") || 
-          matchedFaq.sectionTitle.includes("MEDICO-LEGAL")
-        ) {
-          reply += `\n\n_${chatbotData.safetyNote}_`;
-        }
-
-        setTimeout(() => {
-          setIsTyping(false);
-          const botMsg: Msg = {
-            role: "bot",
-            text: `${reply}\n\n---\n\n*Continuing your request for **${flow.flowKey}**:*\n\n${getStepQuestion(flow.flowKey, currentStepField)}`,
-          };
-          setMessages((prev) => [...prev, botMsg]);
-        }, 800);
-        return;
-      }
+      // During an active flow, NEVER trigger FAQ responses — every input is treated as a step answer
 
       const validationError = validateStepInput(currentStepField, cleanChoice);
       if (validationError) {
