@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check, Pill, FlaskConical, ScanLine, TrendingUp, ShieldCheck, BarChart3, Sparkles, Building, Users, Package, Microscope } from "lucide-react";
+import { ArrowUpRight, Check, Pill, FlaskConical, ScanLine, TrendingUp, ShieldCheck, BarChart3, Sparkles, Building, Users, Package, Microscope, Radio } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { CtaFooter } from "@/components/site/CtaFooter";
 import { Reveal } from "@/components/site/Reveal";
@@ -105,6 +105,18 @@ const services = [
       "TAT management & workflow automation",
       "Reagent inventory & expiry control",
       "Compliance & report authenticity",
+    ],
+  },
+  {
+    icon: Radio,
+    title: "Radiology Management",
+    tagline: "Maximize equipment ROI, eliminate billing leakage, and achieve AERB compliance.",
+    margin: "Efficiency",
+    slug: "radiology-management",
+    points: [
+      "Billing audit & revenue recovery",
+      "Equipment utilization management",
+      "AERB compliance & TAT optimization",
     ],
   },
 ];

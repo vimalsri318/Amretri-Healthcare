@@ -11,6 +11,7 @@ const services = [
   { label: "Pharmacy Compliance & Audit", slug: "compliance-audit" },
   { label: "Consulting & Profit Improvement", slug: "consulting-profit-improvement" },
   { label: "Laboratory Management", slug: "laboratory-management" },
+  { label: "Radiology Management", slug: "radiology-management" },
 ];
 
 const links = [

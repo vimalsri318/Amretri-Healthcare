@@ -20,6 +20,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesRadiologyManagementRouteImport } from './routes/services/radiology-management'
 import { Route as ServicesPharmacistSupplyStaffingRouteImport } from './routes/services/pharmacist-supply-staffing'
 import { Route as ServicesLaboratoryManagementRouteImport } from './routes/services/laboratory-management'
 import { Route as ServicesInventoryStockControlRouteImport } from './routes/services/inventory-stock-control'
@@ -86,6 +87,12 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRadiologyManagementRoute =
+  ServicesRadiologyManagementRouteImport.update({
+    id: '/services/radiology-management',
+    path: '/services/radiology-management',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesPharmacistSupplyStaffingRoute =
   ServicesPharmacistSupplyStaffingRouteImport.update({
     id: '/services/pharmacist-supply-staffing',
@@ -146,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/services/inventory-stock-control': typeof ServicesInventoryStockControlRoute
   '/services/laboratory-management': typeof ServicesLaboratoryManagementRoute
   '/services/pharmacist-supply-staffing': typeof ServicesPharmacistSupplyStaffingRoute
+  '/services/radiology-management': typeof ServicesRadiologyManagementRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -166,6 +174,7 @@ export interface FileRoutesByTo {
   '/services/inventory-stock-control': typeof ServicesInventoryStockControlRoute
   '/services/laboratory-management': typeof ServicesLaboratoryManagementRoute
   '/services/pharmacist-supply-staffing': typeof ServicesPharmacistSupplyStaffingRoute
+  '/services/radiology-management': typeof ServicesRadiologyManagementRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -187,6 +196,7 @@ export interface FileRoutesById {
   '/services/inventory-stock-control': typeof ServicesInventoryStockControlRoute
   '/services/laboratory-management': typeof ServicesLaboratoryManagementRoute
   '/services/pharmacist-supply-staffing': typeof ServicesPharmacistSupplyStaffingRoute
+  '/services/radiology-management': typeof ServicesRadiologyManagementRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -209,6 +219,7 @@ export interface FileRouteTypes {
     | '/services/inventory-stock-control'
     | '/services/laboratory-management'
     | '/services/pharmacist-supply-staffing'
+    | '/services/radiology-management'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -229,6 +240,7 @@ export interface FileRouteTypes {
     | '/services/inventory-stock-control'
     | '/services/laboratory-management'
     | '/services/pharmacist-supply-staffing'
+    | '/services/radiology-management'
     | '/services'
   id:
     | '__root__'
@@ -249,6 +261,7 @@ export interface FileRouteTypes {
     | '/services/inventory-stock-control'
     | '/services/laboratory-management'
     | '/services/pharmacist-supply-staffing'
+    | '/services/radiology-management'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -270,6 +283,7 @@ export interface RootRouteChildren {
   ServicesInventoryStockControlRoute: typeof ServicesInventoryStockControlRoute
   ServicesLaboratoryManagementRoute: typeof ServicesLaboratoryManagementRoute
   ServicesPharmacistSupplyStaffingRoute: typeof ServicesPharmacistSupplyStaffingRoute
+  ServicesRadiologyManagementRoute: typeof ServicesRadiologyManagementRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -352,6 +366,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/radiology-management': {
+      id: '/services/radiology-management'
+      path: '/services/radiology-management'
+      fullPath: '/services/radiology-management'
+      preLoaderRoute: typeof ServicesRadiologyManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/pharmacist-supply-staffing': {
       id: '/services/pharmacist-supply-staffing'
       path: '/services/pharmacist-supply-staffing'
@@ -426,6 +447,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesInventoryStockControlRoute: ServicesInventoryStockControlRoute,
   ServicesLaboratoryManagementRoute: ServicesLaboratoryManagementRoute,
   ServicesPharmacistSupplyStaffingRoute: ServicesPharmacistSupplyStaffingRoute,
+  ServicesRadiologyManagementRoute: ServicesRadiologyManagementRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
