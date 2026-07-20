@@ -10,6 +10,7 @@ const services = [
   { label: "Inventory & Stock Control", slug: "inventory-stock-control" },
   { label: "Pharmacy Compliance & Audit", slug: "compliance-audit" },
   { label: "Consulting & Profit Improvement", slug: "consulting-profit-improvement" },
+  { label: "Laboratory Management", slug: "laboratory-management" },
 ];
 
 const links = [
